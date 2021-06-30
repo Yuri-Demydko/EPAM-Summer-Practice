@@ -1,0 +1,12 @@
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\bin\Debug\net5.0\DTO.deps.json
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\bin\Debug\net5.0\DTO.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\bin\Debug\net5.0\ref\DTO.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\bin\Debug\net5.0\DTO.pdb
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\net5.0\DTO.csproj.AssemblyReference.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\net5.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\net5.0\DTO.AssemblyInfoInputs.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\net5.0\DTO.AssemblyInfo.cs
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\net5.0\DTO.csproj.CoreCompileInputs.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\net5.0\DTO.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\net5.0\ref\DTO.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\net5.0\DTO.pdb
