@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using BLL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebApplication.Models;
@@ -12,15 +13,18 @@ namespace WebApplication.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IBLO _blo;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IBLO blo)
         {
             _logger = logger;
+            _blo = blo;
         }
 
         public IActionResult Index()
         {
-            return View();
+           var ex= _blo.GetExampleUserFromDAO();
+            return View(ex);
         }
 
         public IActionResult Privacy()

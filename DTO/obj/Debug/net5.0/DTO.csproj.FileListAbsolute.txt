@@ -10,3 +10,15 @@ C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\net5.0\DTO.cspr
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\net5.0\DTO.dll
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\net5.0\ref\DTO.dll
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\net5.0\DTO.pdb
+D:\Rider\Projects\DTO\bin\Debug\net5.0\DTO.deps.json
+D:\Rider\Projects\DTO\bin\Debug\net5.0\DTO.dll
+D:\Rider\Projects\DTO\bin\Debug\net5.0\ref\DTO.dll
+D:\Rider\Projects\DTO\bin\Debug\net5.0\DTO.pdb
+D:\Rider\Projects\DTO\obj\Debug\net5.0\DTO.csproj.AssemblyReference.cache
+D:\Rider\Projects\DTO\obj\Debug\net5.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+D:\Rider\Projects\DTO\obj\Debug\net5.0\DTO.AssemblyInfoInputs.cache
+D:\Rider\Projects\DTO\obj\Debug\net5.0\DTO.AssemblyInfo.cs
+D:\Rider\Projects\DTO\obj\Debug\net5.0\DTO.csproj.CoreCompileInputs.cache
+D:\Rider\Projects\DTO\obj\Debug\net5.0\DTO.dll
+D:\Rider\Projects\DTO\obj\Debug\net5.0\ref\DTO.dll
+D:\Rider\Projects\DTO\obj\Debug\net5.0\DTO.pdb

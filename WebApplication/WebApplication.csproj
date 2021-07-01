@@ -5,7 +5,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\LibraryLogic\LibraryLogic.csproj" />
+      <ProjectReference Include="..\BLL.Library\BLL.Library.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Ninject" Version="4.0.0-beta-0134" />
     </ItemGroup>
 
 </Project>

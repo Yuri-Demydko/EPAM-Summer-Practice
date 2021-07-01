@@ -1,33 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\WebApplication\\WebApplication.csproj": {}
+    "D:\\Rider\\Projects\\WebApplication\\WebApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DTO\\DTO.csproj": {
+    "D:\\Rider\\Projects\\BLL.Interfaces\\BLL.Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DTO\\DTO.csproj",
-        "projectName": "DTO",
-        "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DTO\\DTO.csproj",
-        "packagesPath": "C:\\Users\\yurid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DTO\\obj\\",
+        "projectUniqueName": "D:\\Rider\\Projects\\BLL.Interfaces\\BLL.Interfaces.csproj",
+        "projectName": "BLL.Interfaces",
+        "projectPath": "D:\\Rider\\Projects\\BLL.Interfaces\\BLL.Interfaces.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\Rider\\Projects\\BLL.Interfaces\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\yurid\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Rider\\Projects\\DTO\\DTO.csproj": {
+                "projectPath": "D:\\Rider\\Projects\\DTO\\DTO.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -54,36 +56,102 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\EFDAO\\EFDAO.csproj": {
+    "D:\\Rider\\Projects\\BLL.Library\\BLL.Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\EFDAO\\EFDAO.csproj",
-        "projectName": "EFDAO",
-        "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\EFDAO\\EFDAO.csproj",
-        "packagesPath": "C:\\Users\\yurid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\EFDAO\\obj\\",
+        "projectUniqueName": "D:\\Rider\\Projects\\BLL.Library\\BLL.Library.csproj",
+        "projectName": "BLL.Library",
+        "projectPath": "D:\\Rider\\Projects\\BLL.Library\\BLL.Library.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\Rider\\Projects\\BLL.Library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\yurid\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DTO\\DTO.csproj"
+              "D:\\Rider\\Projects\\BLL.Interfaces\\BLL.Interfaces.csproj": {
+                "projectPath": "D:\\Rider\\Projects\\BLL.Interfaces\\BLL.Interfaces.csproj"
+              },
+              "D:\\Rider\\Projects\\DAL.EF\\DAL.EF.csproj": {
+                "projectPath": "D:\\Rider\\Projects\\DAL.EF\\DAL.EF.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Ninject": {
+              "target": "Package",
+              "version": "[4.0.0-beta-0134, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Rider\\Projects\\DAL.EF\\DAL.EF.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Rider\\Projects\\DAL.EF\\DAL.EF.csproj",
+        "projectName": "DAL.EF",
+        "projectPath": "D:\\Rider\\Projects\\DAL.EF\\DAL.EF.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\Rider\\Projects\\DAL.EF\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Rider\\Projects\\DAL.Interfaces\\DAL.Interfaces.csproj": {
+                "projectPath": "D:\\Rider\\Projects\\DAL.Interfaces\\DAL.Interfaces.csproj"
+              },
+              "D:\\Rider\\Projects\\DTO\\DTO.csproj": {
+                "projectPath": "D:\\Rider\\Projects\\DTO\\DTO.csproj"
               }
             }
           }
@@ -111,6 +179,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.0-preview.5.21301.9, )"
+            },
+            "Ninject": {
+              "target": "Package",
+              "version": "[4.0.0-beta-0134, )"
             }
           },
           "imports": [
@@ -128,36 +200,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\LibraryLogic\\LibraryLogic.csproj": {
+    "D:\\Rider\\Projects\\DAL.Interfaces\\DAL.Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\LibraryLogic\\LibraryLogic.csproj",
-        "projectName": "LibraryLogic",
-        "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\LibraryLogic\\LibraryLogic.csproj",
-        "packagesPath": "C:\\Users\\yurid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\LibraryLogic\\obj\\",
+        "projectUniqueName": "D:\\Rider\\Projects\\DAL.Interfaces\\DAL.Interfaces.csproj",
+        "projectName": "DAL.Interfaces",
+        "projectPath": "D:\\Rider\\Projects\\DAL.Interfaces\\DAL.Interfaces.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\Rider\\Projects\\DAL.Interfaces\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\yurid\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\EFDAO\\EFDAO.csproj": {
-                "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\EFDAO\\EFDAO.csproj"
+              "D:\\Rider\\Projects\\DTO\\DTO.csproj": {
+                "projectPath": "D:\\Rider\\Projects\\DTO\\DTO.csproj"
               }
             }
           }
@@ -186,36 +256,92 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\WebApplication\\WebApplication.csproj": {
+    "D:\\Rider\\Projects\\DTO\\DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\WebApplication\\WebApplication.csproj",
+        "projectUniqueName": "D:\\Rider\\Projects\\DTO\\DTO.csproj",
+        "projectName": "DTO",
+        "projectPath": "D:\\Rider\\Projects\\DTO\\DTO.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\Rider\\Projects\\DTO\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Ninject": {
+              "target": "Package",
+              "version": "[4.0.0-beta-0134, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Rider\\Projects\\WebApplication\\WebApplication.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Rider\\Projects\\WebApplication\\WebApplication.csproj",
         "projectName": "WebApplication",
-        "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\WebApplication\\WebApplication.csproj",
-        "packagesPath": "C:\\Users\\yurid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\WebApplication\\obj\\",
+        "projectPath": "D:\\Rider\\Projects\\WebApplication\\WebApplication.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\Rider\\Projects\\WebApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\yurid\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\LibraryLogic\\LibraryLogic.csproj": {
-                "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\LibraryLogic\\LibraryLogic.csproj"
+              "D:\\Rider\\Projects\\BLL.Library\\BLL.Library.csproj": {
+                "projectPath": "D:\\Rider\\Projects\\BLL.Library\\BLL.Library.csproj"
               }
             }
           }
@@ -229,6 +355,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Ninject": {
+              "target": "Package",
+              "version": "[4.0.0-beta-0134, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -247,7 +379,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
