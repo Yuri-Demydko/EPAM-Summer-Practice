@@ -1,7 +1,10 @@
 ﻿using System.Reflection;
+using System.Threading.Tasks;
 using BLL.Interfaces;
 using DAO.Interfaces;
 using DTO.Entities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
 using Ninject;
 
 namespace BLL.Library
@@ -13,9 +16,16 @@ namespace BLL.Library
         {
             DAO = dao;
         }
-        public EUser GetExampleUserFromDAO()
+
+
+        public async Task<IdentityResult> AddUserAsync(EUser user, string password)
         {
-            throw new System.NotImplementedException();
+            return await DAO.AddUserAsync(user, password);
+        }
+
+        public async Task SignInUserAsync(EUser user, bool isPersistent)
+        {
+            await DAO.SignInUserAsync(user, isPersistent);
         }
     }
 }

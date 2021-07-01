@@ -1,30 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Rider\\Projects\\DTO\\DTO.csproj": {}
+    "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DTO\\DTO.csproj": {}
   },
   "projects": {
-    "D:\\Rider\\Projects\\DTO\\DTO.csproj": {
+    "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DTO\\DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Rider\\Projects\\DTO\\DTO.csproj",
+        "projectUniqueName": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DTO\\DTO.csproj",
         "projectName": "DTO",
-        "projectPath": "D:\\Rider\\Projects\\DTO\\DTO.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Rider\\Projects\\DTO\\obj\\",
+        "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DTO\\DTO.csproj",
+        "packagesPath": "C:\\Users\\yurid\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\yurid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -35,9 +37,17 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
             "Ninject": {
               "target": "Package",
               "version": "[4.0.0-beta-0134, )"
@@ -58,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

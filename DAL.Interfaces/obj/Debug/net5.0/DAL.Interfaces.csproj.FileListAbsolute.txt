@@ -1,0 +1,15 @@
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\bin\Debug\net5.0\DAL.Interfaces.deps.json
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\bin\Debug\net5.0\DAL.Interfaces.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\bin\Debug\net5.0\ref\DAL.Interfaces.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\bin\Debug\net5.0\DAL.Interfaces.pdb
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\bin\Debug\net5.0\DTO.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\bin\Debug\net5.0\DTO.pdb
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Debug\net5.0\DAL.Interfaces.csproj.AssemblyReference.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Debug\net5.0\DAL.Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Debug\net5.0\DAL.Interfaces.AssemblyInfoInputs.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Debug\net5.0\DAL.Interfaces.AssemblyInfo.cs
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Debug\net5.0\DAL.Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Debug\net5.0\DAL.Interfaces.csproj.CopyComplete
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Debug\net5.0\DAL.Interfaces.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Debug\net5.0\ref\DAL.Interfaces.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Debug\net5.0\DAL.Interfaces.pdb

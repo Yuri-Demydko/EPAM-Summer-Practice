@@ -1,9 +1,13 @@
-﻿using DTO.Entities;
+﻿using System.Threading.Tasks;
+using DTO.Entities;
+using Microsoft.AspNetCore.Identity;
 
 namespace DAO.Interfaces
 {
     public interface IDAO
     {
-        EUser GetExampleUser();
+        public Task<IdentityResult> AddUserAsync(EUser user, string password);
+
+        public Task SignInUserAsync(EUser user, bool isPersistent);
     }
 }

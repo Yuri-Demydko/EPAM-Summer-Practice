@@ -19,94 +19,93 @@ namespace EFDAO.Migrations
                 .HasAnnotation("ProductVersion", "6.0.0-preview.5.21301.9")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("DTO.Entities.EFBook", b =>
+            modelBuilder.Entity("DTO.Entities.EBook", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("EFUserProfileId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("EFUserProfileId1")
-                        .HasColumnType("int");
-
                     b.Property<string>("FilePath")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OwnerId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EFUserProfileId");
-
-                    b.HasIndex("EFUserProfileId1");
+                    b.HasIndex("OwnerId");
 
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("DTO.Entities.EFUser", b =>
+            modelBuilder.Entity("DTO.Entities.EUser", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("DTO.Entities.EFUserProfile", b =>
+            modelBuilder.Entity("DTO.Entities.EBook", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.HasOne("DTO.Entities.EUser", "Owner")
+                        .WithMany("OwnBooks")
+                        .HasForeignKey("OwnerId");
 
-                    b.Property<string>("AdditionalInfo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserProfiles");
+                    b.Navigation("Owner");
                 });
 
-            modelBuilder.Entity("DTO.Entities.EFBook", b =>
+            modelBuilder.Entity("DTO.Entities.EUser", b =>
                 {
-                    b.HasOne("DTO.Entities.EFUserProfile", null)
-                        .WithMany("FavoriteBooks")
-                        .HasForeignKey("EFUserProfileId");
-
-                    b.HasOne("DTO.Entities.EFUserProfile", null)
-                        .WithMany("UploadedBooks")
-                        .HasForeignKey("EFUserProfileId1");
-                });
-
-            modelBuilder.Entity("DTO.Entities.EFUserProfile", b =>
-                {
-                    b.HasOne("DTO.Entities.EFUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("DTO.Entities.EFUserProfile", b =>
-                {
-                    b.Navigation("FavoriteBooks");
-
-                    b.Navigation("UploadedBooks");
+                    b.Navigation("OwnBooks");
                 });
 #pragma warning restore 612, 618
         }

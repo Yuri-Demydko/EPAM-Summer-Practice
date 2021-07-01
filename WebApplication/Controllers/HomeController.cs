@@ -23,8 +23,8 @@ namespace WebApplication.Controllers
 
         public IActionResult Index()
         {
-           var ex= _blo.GetExampleUserFromDAO();
-            return View(ex);
+         //  var ex= _blo.GetExampleUserFromDAO();
+            return View();
         }
 
         public IActionResult Privacy()

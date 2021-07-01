@@ -1,0 +1,12 @@
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\bin\Debug\netcoreapp3.1\BLL.Interfaces.deps.json
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\bin\Debug\netcoreapp3.1\BLL.Interfaces.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\bin\Debug\netcoreapp3.1\BLL.Interfaces.pdb
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\bin\Debug\netcoreapp3.1\DTO.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\bin\Debug\netcoreapp3.1\DTO.pdb
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\obj\Debug\netcoreapp3.1\BLL.Interfaces.csproj.AssemblyReference.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\obj\Debug\netcoreapp3.1\BLL.Interfaces.AssemblyInfoInputs.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\obj\Debug\netcoreapp3.1\BLL.Interfaces.AssemblyInfo.cs
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\obj\Debug\netcoreapp3.1\BLL.Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\obj\Debug\netcoreapp3.1\BLL.Interfaces.csproj.CopyComplete
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\obj\Debug\netcoreapp3.1\BLL.Interfaces.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\obj\Debug\netcoreapp3.1\BLL.Interfaces.pdb

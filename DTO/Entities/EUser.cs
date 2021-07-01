@@ -1,7 +1,10 @@
-﻿namespace DTO.Entities
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
+
+namespace DTO.Entities
 {
-    public class EUser
+    public class EUser:IdentityUser
     {
-        public int Id { get; set; }
+        public IList<EBook> OwnBooks { get; set; }
     }
 }

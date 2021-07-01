@@ -1,0 +1,9 @@
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\bin\Debug\netcoreapp3.1\DTO.deps.json
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\bin\Debug\netcoreapp3.1\DTO.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\bin\Debug\netcoreapp3.1\DTO.pdb
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\netcoreapp3.1\DTO.csproj.AssemblyReference.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\netcoreapp3.1\DTO.AssemblyInfoInputs.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\netcoreapp3.1\DTO.AssemblyInfo.cs
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\netcoreapp3.1\DTO.csproj.CoreCompileInputs.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\netcoreapp3.1\DTO.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\netcoreapp3.1\DTO.pdb

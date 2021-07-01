@@ -1,0 +1,15 @@
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\bin\Debug\net5.0\BLL.Interfaces.deps.json
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\bin\Debug\net5.0\BLL.Interfaces.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\bin\Debug\net5.0\ref\BLL.Interfaces.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\bin\Debug\net5.0\BLL.Interfaces.pdb
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\bin\Debug\net5.0\DTO.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\bin\Debug\net5.0\DTO.pdb
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\obj\Debug\net5.0\BLL.Interfaces.csproj.AssemblyReference.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\obj\Debug\net5.0\BLL.Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\obj\Debug\net5.0\BLL.Interfaces.AssemblyInfoInputs.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\obj\Debug\net5.0\BLL.Interfaces.AssemblyInfo.cs
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\obj\Debug\net5.0\BLL.Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\obj\Debug\net5.0\BLL.Interfaces.csproj.CopyComplete
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\obj\Debug\net5.0\BLL.Interfaces.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\obj\Debug\net5.0\ref\BLL.Interfaces.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\obj\Debug\net5.0\BLL.Interfaces.pdb
