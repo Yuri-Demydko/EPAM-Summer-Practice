@@ -28,7 +28,10 @@
                             <p class="nav-link text-dark">Welcome, @User.Identity.Name</p>
                         </li>
                         <li class="nav-item">
-                            <form method="post" asp-action="Login" asp-controller="Account">
+                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Index">Personal page</a>
+                        </li>
+                        <li class="nav-item">
+                            <form method="post" asp-action="Logout" asp-controller="Account">
                                 <button type="submit" class="btn btn-outline-danger btn-sm" asp-area="" asp-controller="Account" asp-action="Logout">Logout</button>
                             </form>
                         </li>

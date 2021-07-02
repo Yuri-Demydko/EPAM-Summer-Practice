@@ -1,0 +1,81 @@
+﻿@model WebApplication.Models.Account.UserProfileViewModel
+
+<!DOCTYPE html>
+
+<html>
+<style>
+.container {
+  display: grid;
+  grid-template-columns: 1.3fr 1.3fr;
+  grid-template-rows: 1.3fr 0.7fr 1fr;
+  gap: 5px 5px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "main-info description-info"
+    "settings description-info"
+    "fav-books fav-books";
+}
+
+.main-info { grid-area: main-info; }
+.settings { grid-area: settings; }
+.description-info { grid-area: description-info; }
+.fav-books { grid-area: fav-books; }
+.avatar {
+  vertical-align: middle;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+</style>
+<head>
+    <title>User profile</title>
+</head>
+<body>
+@if (User.Identity.IsAuthenticated)
+{
+    <h1>@Model.User.UserName's personal page</h1>
+    <div class="container">
+        <div class="main-info">
+            <h5>General info</h5>
+            @if(Model.User.Avatar is {Length: 0 })
+            {
+                //add user avatar
+            }
+            else
+            {
+                <img src="/images/default-avatar.jpg" alt="Avatar" class="avatar" style="display: inline">
+                
+            }
+            <ul class="list-group list-group-flush" style="display: inline">
+                <li class="list-group-item">E-mail: @Model.User.Email</li>
+                <li class="list-group-item">Date of birth:
+                    @if (!String.IsNullOrWhiteSpace(Model.User.DateOfBirth))
+                    {
+                        <p style="display: inline">@Model.User.DateOfBirth</p>
+                    }
+                    else
+                    {
+                        <p style="display: inline">Unknown</p>
+                    }
+                </li>
+            </ul>
+        </div>
+        <div class="settings">
+            Maybe here will be some security settings...
+        </div>
+        <div class="description-info">
+            <h5>Additional info</h5>
+            <p>@Model.User.AdditionalInfo</p>
+        </div>
+        <div class="fav-books">
+            Here will be @Model.User.UserName's favorite books...
+        </div>
+    </div>
+}
+else
+{
+    <h3>Please login to get access to this page</h3>
+}
+</body>
+</html>

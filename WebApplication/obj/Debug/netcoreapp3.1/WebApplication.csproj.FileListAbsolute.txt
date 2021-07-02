@@ -95,3 +95,6 @@ C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\obj\Debug\netc
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\obj\Debug\netcoreapp3.1\WebApplication.pdb
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\obj\Debug\netcoreapp3.1\WebApplication.genruntimeconfig.cache
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs

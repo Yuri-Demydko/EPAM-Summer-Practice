@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using BLL.Interfaces;
 
-namespace WebApplication.Models
+namespace WebApplication.Models.Account
 {
     public class RegistrationViewModel
     {

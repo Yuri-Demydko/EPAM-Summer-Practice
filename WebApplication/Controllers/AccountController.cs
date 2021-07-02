@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 //using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication.Models;
+using WebApplication.Models.Account;
 
 namespace WebApplication.Controllers
 {
@@ -17,6 +18,17 @@ namespace WebApplication.Controllers
         public AccountController(IBLO blo)
         {
             _blo = blo;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var model = new UserProfileViewModel()
+            {
+                User=await _blo.GetUserByUserName(User.Identity.Name),
+                EditingMode = false,
+            };
+            model.FavoriteBooks = await _blo.GetFavoriteBooksByUser(model.User);
+            return View(model);
         }
         
         [HttpGet]

@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Collections.Generic;
+using System.Reflection;
 using System.Threading.Tasks;
 using BLL.Interfaces;
 using DAO.Interfaces;
@@ -40,6 +41,7 @@ namespace BLL.Library
             await DAO.SignOutAsync();
         }
 
-        public object GetUserCP() => DAO.GetUserCP();
+        public Task<EUser> GetUserByUserName(string username) => DAO.GetUserByUserName(username);
+        public async Task<IList<EBook>> GetFavoriteBooksByUser(EUser user) => await DAO.GetFavoriteBooksByUser(user);
     }
 }
