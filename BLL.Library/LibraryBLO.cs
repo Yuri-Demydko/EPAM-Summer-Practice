@@ -9,9 +9,10 @@ using Ninject;
 
 namespace BLL.Library
 {
-    public class LibraryBLO:IBLO
+    public class LibraryBLO : IBLO
     {
         private IDAO DAO;
+
         public LibraryBLO(IDAO dao)
         {
             DAO = dao;
@@ -27,5 +28,18 @@ namespace BLL.Library
         {
             await DAO.SignInUserAsync(user, isPersistent);
         }
+
+        public async Task<SignInResult> PasswordSignInAsync(string login, string password, bool remember,
+            bool lockOnFailure)
+        {
+            return await DAO.PasswordSignInAsync(login, password, remember, lockOnFailure);
+        }
+
+        public async Task SignOutAsync()
+        {
+            await DAO.SignOutAsync();
+        }
+
+        public object GetUserCP() => DAO.GetUserCP();
     }
 }

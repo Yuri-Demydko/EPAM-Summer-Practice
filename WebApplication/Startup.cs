@@ -8,6 +8,7 @@ using DAO.Interfaces;
 using DependencyResolver;
 using DTO.Entities;
 using EFDAO;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +33,7 @@ namespace WebApplication
         public void ConfigureServices(IServiceCollection services)
         {
             new ServiceCollectionResolver().SetupServices(services);
+           
             services.AddControllersWithViews();
         }
 
@@ -54,7 +56,9 @@ namespace WebApplication
 
             app.UseRouting();
 
+            
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

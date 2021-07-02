@@ -12,5 +12,8 @@ namespace BLL.Interfaces
         //Calls to DAL
         public Task<IdentityResult> AddUserAsync(EUser user, string password);
         public Task SignInUserAsync(EUser user, bool isPersistent);
+        public Task<SignInResult> PasswordSignInAsync(string login, string password, bool remember, bool lockOnFailure);
+        public Task SignOutAsync();
+        public object GetUserCP();
     }
 }

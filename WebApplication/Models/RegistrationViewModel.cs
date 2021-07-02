@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using BLL.Interfaces;
 
 namespace WebApplication.Models
 {
@@ -20,5 +21,6 @@ namespace WebApplication.Models
         [DataType(DataType.Password)]
         [Display(Name = "Подтвердить пароль")]
         public string PasswordConfirm { get; set; }
+     
     }
 }

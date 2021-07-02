@@ -24,6 +24,7 @@ namespace WebApplication.Controllers
         public IActionResult Index()
         {
          //  var ex= _blo.GetExampleUserFromDAO();
+         
             return View();
         }
 
