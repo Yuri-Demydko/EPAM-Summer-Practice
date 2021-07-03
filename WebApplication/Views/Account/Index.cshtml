@@ -4,28 +4,76 @@
 
 <html>
 <style>
+.InfoTextArea {
+  width: 100%;
+  height: 100%;
+  white-space: pre-wrap;
+  resize: none;
+  border: none;
+  background-color: transparent;
+  color: black;
+}
 .container {
   display: grid;
-  grid-template-columns: 1.3fr 1.3fr;
-  grid-template-rows: 1.3fr 0.7fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1.4fr;
+  gap: 10px 15px;
+  grid-auto-flow: column dense;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  justify-items: stretch;
+  grid-template-areas:
+    "main-info additional-info"
+    "books books";
+}
+
+.main-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.7fr 1.3fr;
   gap: 5px 5px;
   grid-auto-flow: row;
   grid-template-areas:
-    "main-info description-info"
-    "settings description-info"
-    "fav-books fav-books";
+    "user-name user-name"
+    "user-data user-data";
+  grid-area: main-info;
+  width: 100%;
+  height: 100%;
 }
 
-.main-info { grid-area: main-info; }
-.settings { grid-area: settings; }
-.description-info { grid-area: description-info; }
-.fav-books { grid-area: fav-books; }
-.avatar {
-  vertical-align: middle;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+.user-data { grid-area: user-data; }
+
+.user-name { grid-area: user-name; align-content: center}
+
+.additional-info {
+
+  grid-area: additional-info;
+  width: 100%;
+  height: 100%;
 }
+
+.books {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  gap: 5px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "."
+    ".";
+  grid-area: books;
+}
+
+.avatar-pic {
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  border-radius: 30%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
 
 </style>
 <head>
@@ -34,44 +82,113 @@
 <body>
 @if (User.Identity.IsAuthenticated)
 {
-    <h1>@Model.User.UserName's personal page</h1>
-    <div class="container">
-        <div class="main-info">
-            <h5>General info</h5>
-            @if(Model.User.Avatar is {Length: 0 })
-            {
-                //add user avatar
-            }
-            else
-            {
-                <img src="/images/default-avatar.jpg" alt="Avatar" class="avatar" style="display: inline">
-                
-            }
-            <ul class="list-group list-group-flush" style="display: inline">
-                <li class="list-group-item">E-mail: @Model.User.Email</li>
-                <li class="list-group-item">Date of birth:
-                    @if (!String.IsNullOrWhiteSpace(Model.User.DateOfBirth))
-                    {
-                        <p style="display: inline">@Model.User.DateOfBirth</p>
-                    }
-                    else
-                    {
-                        <p style="display: inline">Unknown</p>
-                    }
-                </li>
-            </ul>
-        </div>
-        <div class="settings">
-            Maybe here will be some security settings...
-        </div>
-        <div class="description-info">
-            <h5>Additional info</h5>
-            <p>@Model.User.AdditionalInfo</p>
-        </div>
-        <div class="fav-books">
-            Here will be @Model.User.UserName's favorite books...
-        </div>
-    </div>
+  
+    //if not editing mode, then just show user's info and switch mode button                                    
+    @if(!Model.EditingMode)
+     {
+         <div class="container" style="width: 90%; height: 80%">
+             <div class="main-info">
+                 <div class="user-data">
+                     <p><b>First name:</b> @Model.User.FirstName</p>
+                     <p><b>Last name:</b> @Model.User.LastName</p>
+                     <p><b>Date of birth:</b> @Model.User.DateOfBirth</p>
+                     <p><b>City:</b> @Model.User.City</p>
+                 </div>
+                 <div class="user-name">
+                     <h4>@Model.User.UserName</h4>
+                      @if (Model.User.Avatar != null && Model.User.Avatar.Length > 0)
+                      {
+                          <img src="data:image;base64,@Convert.ToBase64String(Model.User.Avatar)" class="avatar-pic" />
+                                              
+                      }
+                      else
+                      {
+                          <img src="/images/default-avatar.jpg" alt="Avatar" class="avatar-pic" style="">
+                      }
+                      <a class="btn btn-outline-dark btn-sm" style="display: block; width: 40%" asp-controller="Account" asp-action="Index" asp-route-editMode="true">Edit profile</a>
+                 </div>
+             </div>
+             <div class="additional-info">
+                 <h5>Additional info about @Model.User.UserName</h5>
+                <textarea disabled class="InfoTextArea"> @Model.User.AdditionalInfo</textarea>
+             </div>
+             <div class="books">
+                 <div class="own-books">
+                     Here will be uploaded books
+                 </div>
+                 <div class="fav-books">
+                     Here will be fav books
+                 </div>
+             </div>
+         </div>
+     }
+    else
+    {
+        <form method="post" asp-controller="Account" asp-action="EditProfile" enctype="multipart/form-data" style="width:90%; height: 90%">
+            @*<input type="hidden"value="@Model.User" asp-for="User"/>*@
+            <div asp-validation-summary="All"></div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Email">Email</label>
+                    <input type="email" readonly asp-for="Email" class="form-control" value="@Model.Email" placeholder="Email">
+                    <span asp-validation-for="Email"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Username">Username</label>
+                    <input asp-for="Username" readonly type="text" class="form-control" value="@Model.Username" placeholder="JohnyAppleseed">
+                    <span asp-validation-for="Username"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Password">New password</label>
+                    <input type="password" asp-for="Password" class="form-control" placeholder="Password">
+                    <span asp-validation-for="Password"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="PasswordConfirm">Confirm new password</label>
+                    <input type="password" asp-for="PasswordConfirm" class="form-control" placeholder="Password">
+                    <span asp-validation-for="PasswordConfirm"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewAvatar">Profile photo</label>
+                <input type="file" asp-for="NewAvatar" class="form-control"/>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="FName">First name</label>
+                    <input type="text" asp-for="FName" class="form-control" placeholder="Bob">
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="LName">Last name</label>
+                    <input asp-for="LName" type="text" class="form-control" placeholder="Dylan">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="DateOfBirth">Date of birth</label>
+                    <input type="date" class="form-control" asp-for="DateOfBirth"/>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="City">City</label>
+                    <input type="text" asp-for="City" class="form-control" placeholder="Saratov"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdditionalInfo">Additional info</label>
+                <textarea class="form-control" asp-for="AdditionalInfo">@Model.User.AdditionalInfo</textarea>
+            </div>
+            <div class="form-group">
+                            <label asp-for="OldPassword">Current password</label>
+                <input type="password" class="form-control" asp-for="OldPassword" placeholder="Current password"/>
+                </div>
+            <div>
+                <input class="btn btn-primary btn-block" type="submit" value="Save changes"/>
+            </div>
+        </form>
+    }
+   
 }
 else
 {

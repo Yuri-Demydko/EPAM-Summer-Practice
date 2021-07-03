@@ -41,7 +41,16 @@ namespace BLL.Library
             await DAO.SignOutAsync();
         }
 
-        public Task<EUser> GetUserByUserName(string username) => DAO.GetUserByUserName(username);
-        public async Task<IList<EBook>> GetFavoriteBooksByUser(EUser user) => await DAO.GetFavoriteBooksByUser(user);
+        public Task<EUser> GetUserByUserNameAsync(string username) => DAO.GetUserByUserNameAsync(username);
+        public async Task<bool> UpdateUserDataAsync(EUser user) => await DAO.UpdateUserDataAsync(user);
+        public async Task<IList<EBook>> GetFavoriteBooksByUserAsync(EUser user) => await DAO.GetFavoriteBooksByUserAsync(user);
+
+        public async Task<IdentityResult> UpdatePasswordAsync(EUser user, string oldPassword, string newPassword) =>
+            await DAO.UpdatePasswordAsync(user, oldPassword, newPassword);
+
+        public async Task UploadBook(EBook book, string ownerUserName) => await DAO.UploadBook(book, ownerUserName);
+        public async Task<IList<EBook>> GetBooksGallery() => await DAO.GetBooksGallery();
+        public async Task<EBook> GetBookById(string Id) => await DAO.GetBookById(Id);
+
     }
 }

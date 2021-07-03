@@ -26,11 +26,20 @@ namespace EFDAO.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Author")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("Data")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FilePath")
+                    b.Property<string>("Genre")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LikesCount")
+                        .HasColumnType("int");
 
                     b.Property<string>("OwnerId")
                         .HasColumnType("nvarchar(450)");
@@ -72,6 +81,9 @@ namespace EFDAO.Migrations
                     b.Property<byte[]>("Avatar")
                         .HasColumnType("varbinary(max)");
 
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -85,6 +97,12 @@ namespace EFDAO.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");

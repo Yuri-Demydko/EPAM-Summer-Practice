@@ -7,6 +7,7 @@ using BLL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebApplication.Models;
+using WebApplication.Models.Books;
 
 namespace WebApplication.Controllers
 {
@@ -14,6 +15,7 @@ namespace WebApplication.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IBLO _blo;
+        
 
         public HomeController(ILogger<HomeController> logger, IBLO blo)
         {
@@ -21,17 +23,21 @@ namespace WebApplication.Controllers
             _blo = blo;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
          //  var ex= _blo.GetExampleUserFromDAO();
-         
-            return View();
+         var model = new BooksGalleryViewModel 
+             {Books = await _blo.GetBooksGallery()};
+         return View(model);
         }
+        
+        
 
         public IActionResult Privacy()
         {
             return View();
         }
+        
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

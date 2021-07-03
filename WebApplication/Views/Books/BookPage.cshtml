@@ -1,0 +1,8 @@
+﻿@model DTO.Entities.EBook
+
+@*
+src=';'*@
+
+<h1>@Model.Title</h1>
+<iframe src="data:application/pdf;Base64,@Convert.ToBase64String(Model.Data)" width="100%" height="500px">
+</iframe>

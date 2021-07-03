@@ -1,28 +1,60 @@
 ﻿@model WebApplication.Models.Account.RegistrationViewModel
-<h2>Регистрация нового пользователя</h2>
-<form method="post" asp-controller="Account" asp-action="Register">
+<h2>New user registration</h2>
+<form method="post" asp-controller="Account" asp-action="Register"  enctype="multipart/form-data">
     <div asp-validation-summary="All"></div>
-    <div>
-        <label asp-for="Email"></label><br />
-        <input asp-for="Email" />
-        <span asp-validation-for="Email"></span>
-    </div>
-    <div>
-            <label asp-for="Username"></label><br />
-            <input asp-for="Username" />
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="Email">Email</label>
+            <input type="email" asp-for="Email" class="form-control" placeholder="Email">
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Username">Username</label>
+            <input asp-for="Username" type="text" class="form-control" placeholder="JohnyAppleseed">
             <span asp-validation-for="Username"></span>
         </div>
-    <div>
-        <label asp-for="Password"></label><br />
-        <input asp-for="Password" />
-        <span asp-validation-for="Password"></span>
     </div>
-    <div>
-        <label asp-for="PasswordConfirm"></label><br />
-        <input asp-for="PasswordConfirm" />
-        <span asp-validation-for="PasswordConfirm"></span>
+    <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="Password">Password</label>
+                <input type="password" asp-for="Password" class="form-control" placeholder="Password">
+                <span asp-validation-for="Password"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="PasswordConfirm">Confirm password</label>
+                <input type="password" asp-for="PasswordConfirm" class="form-control" placeholder="Password">
+                <span asp-validation-for="PasswordConfirm"></span>
+            </div>
+        </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="FName">First name</label>
+            <input type="text" asp-for="FName" class="form-control" placeholder="Bob">
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="LName">Last name</label>
+            <input asp-for="LName" type="text" class="form-control" placeholder="Dylan">
+        </div>
     </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="DateOfBirth">Date of birth</label>
+            <input type="date" class="form-control" asp-for="DateOfBirth"/>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="City">City</label>
+            <input type="text" asp-for="City" class="form-control"  placeholder="Saratov"/>
+        </div>
+    </div>
+    <div class="form-group">
+                    <label asp-for="Avatar">Profile photo</label>
+        <input type="file" asp-for="Avatar" class="form-control"/>
+        </div>
     <div>
-        <input type="submit" value="Регистрация" />
+        <div class="form-group">
+            <label asp-for="AdditionalInfo">Additional info</label>
+            <textarea class="form-control" asp-for="AdditionalInfo"></textarea>
+        </div>
+        <input class="btn btn-primary btn-block" type="submit" value="Регистрация"/>
     </div>
 </form>

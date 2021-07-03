@@ -98,3 +98,10 @@ C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\obj\Debug\netc
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Books\UploadBook.cshtml.g.cs
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\Aspose.PDF.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\System.Diagnostics.PerformanceCounter.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Books\BookPage.cshtml.g.cs

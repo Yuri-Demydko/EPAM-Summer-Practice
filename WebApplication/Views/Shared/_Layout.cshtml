@@ -31,8 +31,11 @@
                             <a class="nav-link text-dark" asp-controller="Account" asp-action="Index">Personal page</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Books" asp-action="UploadBook">Upload new book</a>
+                        </li>
+                        <li class="nav-item">
                             <form method="post" asp-action="Logout" asp-controller="Account">
-                                <button type="submit" class="btn btn-outline-danger btn-sm" asp-area="" asp-controller="Account" asp-action="Logout">Logout</button>
+                                <input style="border:none; background: transparent" type="submit" class="nav-link text-danger" asp-area="" asp-controller="Account" asp-action="Logout" value="Logout"/>
                             </form>
                         </li>
                     }
@@ -50,14 +53,14 @@
         </div>
     </nav>
 </header>
-<div class="container">
+<div class="container-fluid">
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
 </div>
 
 <footer class="border-top footer text-muted">
-    <div class="container">
+    <div class="container-fluid">
         &copy; 2021 - WebApplication - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
     </div>
 </footer>
