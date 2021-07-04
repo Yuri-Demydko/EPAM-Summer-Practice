@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EFDAO 
 {
-    public class EFDBContext : IdentityDbContext<EUser>
+    public sealed class EFDBContext : IdentityDbContext<EUser>
     {
         public DbSet<EUser> Users { get; set; }
         public DbSet<EBook> Books { get; set; }
@@ -17,13 +17,13 @@ namespace EFDAO
         public EFDBContext() : base()
         {
             Database.EnsureCreated();
-            //TEST
-            
         }
  
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=EPAM.Library.DB;Trusted_Connection=True;");
+            optionsBuilder
+                .UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=EPAM.Library.DB;Trusted_Connection=True;");
+            
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -34,5 +34,7 @@ namespace EFDAO
                 .HasMany(u => u.OwnBooks)
                 .WithOne(b => b.Owner);
         }
+        
+        
     }
 }

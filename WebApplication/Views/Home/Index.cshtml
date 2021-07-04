@@ -2,33 +2,26 @@
   ViewData["Title"] = "Home Page";
 }
 <style>
+.card{
+background: rgb(2,0,36);
+background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(123,149,154,1) 100%);
+}
 </style>
 @model WebApplication.Models.Books.BooksGalleryViewModel
 <h3>Welcome to Pro-Ultra-Super-Dooper E-Library</h3>
 <div class="card-columns" style="column-count: 4">
   @foreach (var book in Model.Books)
   {
-    <div class="card text-white bg-dark mb-3 text-center" style="width: 13rem; height: 18rem; display: inline-block">
+    <div class="card text-white bg-dark mb-3 text-center" style="width: 13rem; height: 18rem; display: inline-block; border: none; @book.CardBg">
       <div class="card-header">
         @book.Author
       </div>
       <div class="card-body">
-        <h5 class="card-title">@book.Title</h5>
-        <h6 class="card-subtitle">@book.Genre</h6>
+        <h4 class="card-title">@book.Title</h4>
+        <h5 class="card-subtitle">@book.Genre</h5>
         <p class="card-text" style="font-size: small">
-          @{
-            if (book.Description.Length > 95)
-            {
-              var shortDesc = book.Description.Substring(0, 95) + "...";
-              <span style="white-space: pre-line">@shortDesc</span>
-            }
-            else
-            {
-              <span style="white-space: pre-line">@book.Description</span>
-            }
-          }
         </p>
-        <a asp-controller="Books" asp-action="BookPage" asp-route-Id="@book.Id" class="badge badge-light" style="position:absolute; left: 5%; bottom: 5%;">Read</a>
+        <a asp-controller="Books" asp-action="BookPage" asp-route-Id="@book.Id" class="badge badge-light" style="position:absolute; left: 5%; bottom: 5%;">View</a>
         <span class="badge badge-success" style="position:absolute; right: 5%; bottom: 5%;">Likes: @book.LikesCount</span>
       </div>
       

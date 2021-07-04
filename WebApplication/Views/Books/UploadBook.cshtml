@@ -1,4 +1,4 @@
-﻿@model WebApplication.Models.Books.UploadBookViewModel
+﻿@model WebApplication.Models.Books.UploadOrEditBookViewModel
 @{
     ViewBag.Title = "Upload new book";
 }
@@ -8,23 +8,23 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <label asp-for="Title">Book's title</label>
-            <input type="text" asp-for="Title" class="form-control" placeholder="War and Peace">
+            <input type="text" maxlength="20" asp-for="Title" class="form-control" placeholder="War and Peace">
             <span asp-validation-for="Title"></span>
         </div>
         <div class="form-group col-md-6">
             <label asp-for="Author">Book's author</label>
-            <input asp-for="Author" type="text" class="form-control" placeholder="Leo Tolstoy">
+            <input asp-for="Author" maxlength="40" type="text" class="form-control" placeholder="Leo Tolstoy">
             <span asp-validation-for="Author"></span>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
             <label asp-for="Genre">Book's genre</label>
-            <input type="text" asp-for="Genre" class="form-control" placeholder="Novel">
+            <input type="text" maxlength="20" asp-for="Genre" class="form-control" placeholder="Novel">
         </div>
         <div class="form-group col-md-6">
            <label asp-for="BookFile">Book's PDF file</label>
-            <input type="file" asp-for="BookFile" class="form-control" />
+            <input type="file" accept=".pdf" asp-for="BookFile" class="form-control" />
         </div>
     </div>
     

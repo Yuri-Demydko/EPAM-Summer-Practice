@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using BLL.Interfaces;
 using DTO.Entities;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 //using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication.Models;
@@ -28,7 +32,7 @@ namespace WebApplication.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user= await  _blo.GetUserByUserNameAsync(User.Identity.Name);
+                var user= await  _blo.GetUserByUserNameAsync(User.Identity.Name,true);
                 model.User = user;
                 if (IsNullOrWhiteSpace(model.FName))
                     model.FName = "Unknown";
@@ -48,8 +52,7 @@ namespace WebApplication.Controllers
 
                 if (model.NewAvatar != null)
                 {
-                    using var reader = new BinaryReader(model.NewAvatar.OpenReadStream());
-                    model.User.Avatar = reader.ReadBytes((int)model.NewAvatar.Length);
+                    model.User.Avatar = CompressAvatar(model.NewAvatar);
                 }
 
                 if (!IsNullOrWhiteSpace(model.Password) && Equals(model.Password, model.PasswordConfirm))
@@ -69,12 +72,32 @@ namespace WebApplication.Controllers
             }
             return RedirectToAction("Index", controllerName: "Account", new {editMode=true,errModel=model});
         }
+        private byte[] CompressAvatar(IFormFile avatar)
+        {
+            using var reader = new BinaryReader(avatar.OpenReadStream());
+            byte[] byteArr = reader.ReadBytes((int)avatar.Length);
+            var jpegQuality = 50; 
+            Image image; 
+            using (var inputStream = new MemoryStream(byteArr)) {
+                image = Image.FromStream(inputStream);
+                var jpegEncoder = ImageCodecInfo.GetImageDecoders() 
+                    .First(c => c.FormatID == ImageFormat.Jpeg.Guid); 
+                var encoderParameters = new EncoderParameters(1); 
+                encoderParameters.Param[0] = new EncoderParameter(Encoder.Quality, jpegQuality); 
+                Byte[] outputBytes; 
+                using (var outputStream = new MemoryStream()) { 
+                    image.Save(outputStream, jpegEncoder, encoderParameters);
+                    outputBytes = outputStream.ToArray(); 
+                }
 
+                return outputBytes;
+            }
+        }
         public async Task<IActionResult> Index(bool editMode=false,UserProfileViewModel errModel=null)
         {
             var model = new UserProfileViewModel()
             {
-                User=await _blo.GetUserByUserNameAsync(User.Identity.Name),
+                User=await _blo.GetUserByUserNameAsync(User.Identity.Name,true),
                 EditingMode = editMode,
             };
            // model.User.Avatar ??= new byte[] { };
@@ -118,8 +141,8 @@ namespace WebApplication.Controllers
                     };
                 if (model.Avatar != null)
                 {
-                    using var reader = new BinaryReader(model.Avatar.OpenReadStream());
-                    user.Avatar = reader.ReadBytes((int)model.Avatar.Length);
+                    //using var reader = new BinaryReader(model.Avatar.OpenReadStream());
+                    user.Avatar = CompressAvatar(model.Avatar);
                 }
                 // добавляем пользователя
                 var result = await _blo.AddUserAsync(user, model.Password);

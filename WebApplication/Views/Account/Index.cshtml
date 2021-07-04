@@ -4,6 +4,51 @@
 
 <html>
 <style>
+.container {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr 1.2fr 1fr;
+  grid-template-rows: 0.7fr 0.6fr 1.4fr 1.3fr;
+  gap: 10px 10px;
+  grid-auto-flow: row dense;
+  justify-content: stretch;
+  align-content: stretch;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-template-areas:
+    "user-name user-name additional-info additional-info"
+    "user-info user-info additional-info additional-info"
+    "own-books own-books own-books own-books"
+    "fav-books fav-books fav-books fav-books";
+}
+
+.additional-info {
+
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: additional-info;
+}
+
+.own-books {
+
+  align-self: start;
+  grid-area: own-books;
+}
+
+.fav-books {
+
+  align-self: start;
+  grid-area: fav-books;
+}
+
+.user-info { grid-area: user-info; }
+
+.user-name {
+
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: user-name;
+}
+
 .InfoTextArea {
   width: 100%;
   height: 100%;
@@ -13,58 +58,10 @@
   background-color: transparent;
   color: black;
 }
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1.4fr;
-  gap: 10px 15px;
-  grid-auto-flow: column dense;
-  justify-content: space-evenly;
-  align-content: space-evenly;
-  justify-items: stretch;
-  grid-template-areas:
-    "main-info additional-info"
-    "books books";
+
+.book-card{
+margin: 10px 5px;
 }
-
-.main-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.7fr 1.3fr;
-  gap: 5px 5px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "user-name user-name"
-    "user-data user-data";
-  grid-area: main-info;
-  width: 100%;
-  height: 100%;
-}
-
-.user-data { grid-area: user-data; }
-
-.user-name { grid-area: user-name; align-content: center}
-
-.additional-info {
-
-  grid-area: additional-info;
-  width: 100%;
-  height: 100%;
-}
-
-.books {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-auto-columns: 1fr;
-  gap: 5px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "."
-    ".";
-  grid-area: books;
-}
-
 .avatar-pic {
   vertical-align: middle;
   width: 100px;
@@ -82,45 +79,78 @@
 <body>
 @if (User.Identity.IsAuthenticated)
 {
-  
     //if not editing mode, then just show user's info and switch mode button                                    
     @if(!Model.EditingMode)
      {
          <div class="container" style="width: 90%; height: 80%">
-             <div class="main-info">
-                 <div class="user-data">
-                     <p><b>First name:</b> @Model.User.FirstName</p>
-                     <p><b>Last name:</b> @Model.User.LastName</p>
-                     <p><b>Date of birth:</b> @Model.User.DateOfBirth</p>
-                     <p><b>City:</b> @Model.User.City</p>
-                 </div>
-                 <div class="user-name">
-                     <h4>@Model.User.UserName</h4>
-                      @if (Model.User.Avatar != null && Model.User.Avatar.Length > 0)
-                      {
-                          <img src="data:image;base64,@Convert.ToBase64String(Model.User.Avatar)" class="avatar-pic" />
-                                              
-                      }
-                      else
-                      {
-                          <img src="/images/default-avatar.jpg" alt="Avatar" class="avatar-pic" style="">
-                      }
-                      <a class="btn btn-outline-dark btn-sm" style="display: block; width: 40%" asp-controller="Account" asp-action="Index" asp-route-editMode="true">Edit profile</a>
-                 </div>
+           <div class="additional-info">
+                            <h5>Additional info about @Model.User.UserName</h5>
+                           <textarea disabled class="InfoTextArea"> @Model.User.AdditionalInfo</textarea>
+                        </div>
+           <div class="own-books"><h3>@Model.User.UserName's own books</h3>
+               <div class="card" style="max-width: 80vw;overflow: auto">
+                                                       <div class="row flex-nowrap" style="padding-left: 30px; padding-right: 30px">
+                                                           @foreach (var book in Model.User.OwnBooks)
+                                                           {
+                                                               <div class="book-card card text-white bg-dark mb-3 text-center" style="width: 13rem; height: 18rem;  min-width: 13rem; min-height: 18rem; display: inline-block; border: none; @book.CardBg">
+                                                                   <div class="card-header">
+                                                                       @book.Author
+                                                                   </div>
+                                                                   <div class="card-body">
+                                                                       <h4 class="card-title">@book.Title</h4>
+                                                                       <h5 class="card-subtitle">@book.Genre</h5>
+                                                                       <p class="card-text" style="font-size: small">
+                                                                       </p>
+                                                                       <a asp-controller="Books" asp-action="BookPage" asp-route-Id="@book.Id" class="badge badge-light" style="position:absolute; left: 5%; bottom: 5%;">View</a>
+                                                                       <span class="badge badge-success" style="position:absolute; right: 5%; bottom: 5%;">Likes: @book.LikesCount</span>
+                                                                   </div>
+                                                               </div>
+                                                           }
+                                                       </div>
+                                                   </div></div>
+             <div class="fav-books">
+                 <h3>@Model.User.UserName's favorite books</h3>
+                 <div class="card" style="max-width: 80vw;overflow: auto">
+                                      <div class="row flex-nowrap" style="padding-left: 30px; padding-right: 30px">
+                                                               @foreach (var book in Model.FavoriteBooks)
+                                                               {
+                                                                   <div class="book-card card text-white bg-dark mb-3 text-center" style="width: 13rem; height: 18rem;  min-width: 13rem; min-height: 18rem; display: inline-block; border: none; @book.CardBg">
+                                                                       <div class="card-header">
+                                                                           @book.Author
+                                                                       </div>
+                                                                       <div class="card-body">
+                                                                           <h4 class="card-title">@book.Title</h4>
+                                                                           <h5 class="card-subtitle">@book.Genre</h5>
+                                                                           <p class="card-text" style="font-size: small">
+                                                                           </p>
+                                                                           <a asp-controller="Books" asp-action="BookPage" asp-route-Id="@book.Id" class="badge badge-light" style="position:absolute; left: 5%; bottom: 5%;">View</a>
+                                                                           <span class="badge badge-success" style="position:absolute; right: 5%; bottom: 5%;">Likes: @book.LikesCount</span>
+                                                                       </div>
+                                                                   </div>
+                                                               }
+                                                           </div>
+                                  </div>
              </div>
-             <div class="additional-info">
-                 <h5>Additional info about @Model.User.UserName</h5>
-                <textarea disabled class="InfoTextArea"> @Model.User.AdditionalInfo</textarea>
+             <div class="user-name">
+                 <h3>@Model.User.UserName</h3>
+                 @if (Model.User.Avatar != null && Model.User.Avatar.Length > 0)
+                                  {
+                                      <img src="data:image;base64,@Convert.ToBase64String(Model.User.Avatar)" class="avatar-pic" alt="Avatar"/>
+                                  }
+                                  else
+                                  {
+                                      <img src="/images/default-avatar.jpg" alt="Avatar" class="avatar-pic" style="">}
+                                  <a class="btn btn-outline-dark btn-sm" style="display: block; width: 40%" asp-controller="Account" asp-action="Index" asp-route-editMode="true">Edit profile</a>
+
              </div>
-             <div class="books">
-                 <div class="own-books">
-                     Here will be uploaded books
-                 </div>
-                 <div class="fav-books">
-                     Here will be fav books
-                 </div>
+             <div class="user-info">
+                  <p><b>First name:</b> @Model.User.FirstName</p>
+                 <p><b>Last name:</b> @Model.User.LastName</p>
+                 <p><b>Date of birth:</b> @Model.User.DateOfBirth</p>
+                 <p><b>City:</b> @Model.User.City</p>
              </div>
          </div>
+         
      }
     else
     {
@@ -153,7 +183,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="NewAvatar">Profile photo</label>
-                <input type="file" asp-for="NewAvatar" class="form-control"/>
+                <input type="file" accept=".png, .jpg, .jpeg" asp-for="NewAvatar" class="form-control"/>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">

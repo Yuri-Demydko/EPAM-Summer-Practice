@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Http;
 
 namespace WebApplication.Models.Books
 {
-    public class UploadBookViewModel
+    public class UploadOrEditBookViewModel
     {
+        public string Id { get; set; }
         [Required]
         [Display(Name = "Book's title")]
         public string Title { get; set; }
@@ -14,12 +15,11 @@ namespace WebApplication.Models.Books
 
         [Display(Name = "Book's genre")] 
         public string Genre { get; set; } = "Unknown genre";
-
         public string Description { get; set; } = "No description";
         [Required]
         [Display(Name = "Book's PDF file")]
         public IFormFile BookFile { get; set; }
         
-        public string OwnerUserName { get; set; }
+        //public string OwnerUserName { get; set; }
     }
 }

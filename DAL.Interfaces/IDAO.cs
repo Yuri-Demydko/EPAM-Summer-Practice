@@ -14,7 +14,7 @@ namespace DAO.Interfaces
         public Task<SignInResult> PasswordSignInAsync(string login, string password, bool remember, bool lockOnFailure);
         public Task SignOutAsync();
 
-        public Task<EUser> GetUserByUserNameAsync(string username);
+        public Task<EUser> GetUserByUserNameAsync(string username,bool includeHeavyData=false);
         public  Task<IList<EBook>> GetFavoriteBooksByUserAsync(EUser user);
 
         public Task<bool> UpdateUserDataAsync(EUser user);
@@ -22,7 +22,11 @@ namespace DAO.Interfaces
 
         public Task UploadBook(EBook book, string ownerUserName);
         public Task<IList<EBook>> GetBooksGallery();
-        public Task<EBook> GetBookById(string Id);
+        public Task<EBook> GetBookById(string id,bool includeHeavyData=true);
+        public Task<bool> CheckBookInFavoritesOfUser(EBook book, string userName);
+        public Task UpdateBookInFavorites(int bookId, string userName, bool removingMode = false);
+        public Task EditBookData(EBook updatedBook);
+        public Task DeleteBook(string bookId);
 
     }
 }

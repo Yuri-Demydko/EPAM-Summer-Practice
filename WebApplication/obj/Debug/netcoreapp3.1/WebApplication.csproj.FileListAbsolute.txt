@@ -105,3 +105,4 @@ C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netc
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\System.Diagnostics.PerformanceCounter.dll
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Books\BookPage.cshtml.g.cs
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Books\EditBookData.cshtml.g.cs

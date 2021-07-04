@@ -16,7 +16,7 @@ namespace DependencyResolver
         {
             //IServiceCollection services = new ServiceCollection();
             
-            services.AddScoped<IBLO, BLL.Library.LibraryBLO>();
+            services.AddScoped<IBLO, BLL.Library.LibraryBlo>();
             services.AddScoped<IDAO, EFDAO.DAO>();
             services.AddIdentity<EUser, IdentityRole>()
                             .AddEntityFrameworkStores<EFDBContext>()
