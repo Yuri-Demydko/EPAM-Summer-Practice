@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using DTO.Entities;
 using Microsoft.AspNetCore.Identity;
@@ -27,6 +28,7 @@ namespace DAO.Interfaces
         public Task UpdateBookInFavorites(int bookId, string userName, bool removingMode = false);
         public Task EditBookData(EBook updatedBook);
         public Task DeleteBook(string bookId);
+        public Task<IList<EBook>> GetFilteredBooksGallery(Tuple<string,byte> searchParameters);
 
     }
 }

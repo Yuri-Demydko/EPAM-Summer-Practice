@@ -208,7 +208,11 @@ namespace EFDAO
             if (updatedBook == null)
                 throw new ArgumentException("Book parameter can't be null");
             var oldBook =await GetBookById(updatedBook.Id.ToString(), true);
-            updatedBook.Data = oldBook.Data;
+            if(oldBook.Data!=null && oldBook.Data.Any())
+            {
+                updatedBook.Data = new byte[oldBook.Data.Length];
+                oldBook.Data.CopyTo(updatedBook.Data, 0);
+            }
             _context.Update(updatedBook);
             await _context.SaveChangesAsync();
         }
@@ -229,6 +233,7 @@ namespace EFDAO
                     LikesCount = b.LikesCount,
                     CardBg = b.CardBg,
                     Owner = b.Owner,
+                    Description = b.Description
                 }).FirstOrDefaultAsync();
             else
             {
@@ -244,7 +249,8 @@ namespace EFDAO
                         LikesCount = b.LikesCount,
                         CardBg = b.CardBg,
                         Owner = b.Owner,
-                        Data = b.Data
+                        Data = b.Data,
+                        Description = b.Description
                     }).FirstOrDefaultAsync();
                 /*if (res != null)
                     res.Data = await (from bd
@@ -272,8 +278,41 @@ namespace EFDAO
                 }).ToListAsync();
             return res;
         }
-        
-        //public File
+
+        public async Task<IList<EBook>> GetFilteredBooksGallery(Tuple<string,byte> searchParameters)
+        {
+            var booksBasicList  = await _context.Books
+                .Select(b => new EBook()
+                {
+                    Id=b.Id,
+                    Title = b.Title,
+                    Author = b.Author,
+                    Genre = b.Genre,
+                    LikesCount = b.LikesCount,
+                    CardBg = b.CardBg,
+                    Description = b.Description
+                }).ToListAsync();
+            var result = new List<EBook>();
+            if(searchParameters.Item2==1)
+              result = booksBasicList.Where(b => b.Title.Contains(searchParameters.Item1,StringComparison.OrdinalIgnoreCase))
+                .ToList();
+            if(searchParameters.Item2==2)
+                result = booksBasicList.Where(b => b.Author.Contains(searchParameters.Item1,StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+            if(searchParameters.Item2==3)
+                result = booksBasicList.Where(b => b.Genre.Contains(searchParameters.Item1,StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+
+            if (searchParameters.Item2 == 4)
+            {
+               // var list2 = await _context.Books.Select(b => new Tuple<int, string>(b.Id, b.Description)).ToListAsync();
+               result = booksBasicList.Where(b => b.Description.Contains(searchParameters.Item1,StringComparison.OrdinalIgnoreCase))
+                   .ToList();
+            }
+
+            return result;
+                //throw new ArgumentException("Invalid search parameters!");
+        }
 
         public async Task UpdateBookInFavorites(int bookId, string userName,bool removingMode=false)
         {

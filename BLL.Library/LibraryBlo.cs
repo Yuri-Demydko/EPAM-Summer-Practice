@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using BLL.Interfaces;
 using DAO.Interfaces;
@@ -31,5 +32,8 @@ namespace BLL.Library
             await _dao.UpdateBookInFavorites(bookId, userName,removingMode);
         public async Task EditBookData(EBook updatedBook) => await _dao.EditBookData(updatedBook);
         public async Task DeleteBook(string bookId) => await _dao.DeleteBook(bookId);
+
+        public async Task<IList<EBook>> GetFilteredBooksGallery(Tuple<string,byte> searchParameters) =>
+            await _dao.GetFilteredBooksGallery(searchParameters);
     }
 }

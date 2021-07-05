@@ -1,31 +1,136 @@
 ﻿@{
   ViewData["Title"] = "Home Page";
 }
+@model WebApplication.Models.Books.BooksGalleryViewModel
 <style>
 .card{
 background: rgb(2,0,36);
 background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(123,149,154,1) 100%);
+-webkit-box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.47);
+-moz-box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.47);
+box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.47);
+margin-left: 15px;
+margin-right: 15px;
+margin-top: 30px;
+display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+/* Design */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  background-color: #ecf9ff;
+}
+body {
+  letter-spacing: 0;
+  padding: 1rem;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 </style>
-@model WebApplication.Models.Books.BooksGalleryViewModel
 <h3>Welcome to Pro-Ultra-Super-Dooper E-Library</h3>
-<div class="card-columns" style="column-count: 4">
-  @foreach (var book in Model.Books)
-  {
-    <div class="card text-white bg-dark mb-3 text-center" style="width: 13rem; height: 18rem; display: inline-block; border: none; @book.CardBg">
-      <div class="card-header">
-        @book.Author
-      </div>
-      <div class="card-body">
-        <h4 class="card-title">@book.Title</h4>
-        <h5 class="card-subtitle">@book.Genre</h5>
-        <p class="card-text" style="font-size: small">
-        </p>
-        <a asp-controller="Books" asp-action="BookPage" asp-route-Id="@book.Id" class="badge badge-light" style="position:absolute; left: 5%; bottom: 5%;">View</a>
-        <span class="badge badge-success" style="position:absolute; right: 5%; bottom: 5%;">Likes: @book.LikesCount</span>
-      </div>
-      
+@*---------------Search field-------------*@
+<form style="margin-left:15px; margin-right: 15px" method="post" asp-controller="Home" asp-action="SearchForBooks">
+  <div class="form-row">
+    <div class="col-10">
+      <input type="text" asp-for="SearchString" class="form-control" placeholder="Search for books"/>
     </div>
-  }
-</div>
+    <div class="col">
+      <div class="btn-group" role="group">
+        <button type="submit" class="btn btn-outline-info">Search</button>
+        <a class="btn btn-outline-danger" asp-action="Index" asp-controller="Home">Reset</a>
+      </div>
+    </div>
+    </div>
+  <div class="form-row" style="margin-left: 0.5%">
+    <div class="form-check form-check-inline">
+      <input checked class="form-check-input" asp-for="SearchMode" type="radio" value="1">
+      <label class="form-check-label">By title</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" asp-for="SearchMode" type="radio" value="2">
+      <label class="form-check-label">By author</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" asp-for="SearchMode" type="radio" value="3">
+      <label class="form-check-label">By genre</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" asp-for="SearchMode" type="radio" value="4">
+      <label class="form-check-label">By description</label>
+    </div>
+  </div>
+</form>
+@if (Model.Books.Any())
+{
+  @*---------------Books gallery------------*@
+  <ul class="cards">
+    @for (int i = Model.PageStartEndIndexes.Item1; i<Model.PageStartEndIndexes.Item2;i++)
+    {
+      var book = Model.Books[i];
+      <div class="card text-white bg-dark mb-3 text-center" style="width: 13rem; height: 18rem; border: none; @book.CardBg">
+        <div class="card-header">
+          @book.Author
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">@book.Title</h4>
+          <h5 class="card-subtitle">@book.Genre</h5>
+          <p class="card-text" style="font-size: small">
+          </p>
+          <a asp-controller="Books" asp-action="BookPage" asp-route-Id="@book.Id" class="badge badge-light" style="position:absolute; left: 5%; bottom: 5%;">View</a>
+          <span class="badge badge-success" style="position:absolute; right: 5%; bottom: 5%;">Likes: @book.LikesCount</span>
+        </div>
+      </div>
+    }
+  </ul>
+  @*----------------*Pagination-------------*@
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      @{
+        string disabled = "";
+        if (Model.PageNum <= 0)
+          disabled = "disabled";
+      }
+     <li class="page-item @disabled">
+             <a class="page-link" asp-action="Index" asp-controller="Home" asp-route-pageNum="@(Model.PageNum-1)" tabindex="-1">Previous</a>
+           </li>
+      @for (var i = Model.MinMaxPages.Item1; i < Model.MinMaxPages.Item2; i++)
+      {
+        var activeClass = "";
+        if (Model.PageNum == i)
+          activeClass = "active";
+        <li class="page-item @activeClass"><a class="page-link" asp-controller="Home" asp-action="Index" asp-route-pageNum="@i">@(i+1)</a></li>
+      }
+      @{
+        disabled = "";
+        if (Model.PageNum + 1 >= Model.TotalPagesCount)
+          disabled = "disabled";
+      }
+      <li class="page-item @disabled">
+        <a class="page-link" asp-controller="Home" asp-route-pageNum="@(Model.PageNum+1)">Next</a>
+        </li>
+      
+    </ul>
+  </nav>
+}
+else
+{
+  <div class="jumbotron jumbotron-fluid alert alert-danger" style="margin-top:30px">
+  <div class="container">
+    <h1 class="display-4">Nothing found</h1>
+    <p class="lead">Sorry, but we didn't found any books :(</p>
+  </div>
+  <hr class="my-4" style="width: 96%">
+  </div>
+}
+
 

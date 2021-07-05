@@ -1,24 +1,28 @@
 ﻿@model WebApplication.Models.Account.LoginViewModel
  
-<h2>Вход на портал</h2>
-<form method="post" asp-controller="Account" asp-action="Login"
-      asp-route-returnUrl="@Model.ReturnUrl">
-    <div asp-validation-summary="ModelOnly"></div>
-    <div>
-        <label asp-for="Login"></label><br />
-        <input asp-for="Login" />
-        <span asp-validation-for="Login"></span>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Just sign in</h1>
+        <p class="lead">To get access to all features of that E-Library</p>
     </div>
-    <div>
-        <label asp-for="Password"></label><br />
-        <input asp-for="Password" />
-        <span asp-validation-for="Password"></span>
-    </div>
-    <div>
-        <label asp-for="RememberMe"></label><br />
-        <input asp-for="RememberMe" />
-    </div>
-    <div>
-        <input type="submit" value="Войти" />
-    </div>
-</form>
+    <hr class="my-4" style="width: 96%">
+    <form style="margin:0 auto; width:fit-content" class="form-inline" method="post" asp-controller="Account" asp-action="Login"
+          asp-route-returnUrl="@Model.ReturnUrl">
+        <div asp-validation-summary="ModelOnly"></div>
+        
+            <input class="form-control form-control-lg mb-2 mr-sm-2" asp-for="Login" placeholder="Username"/>
+            <span asp-validation-for="Login"></span>
+            
+            <input type="password" class="form-control form-control-lg mb-2 mr-sm-2" asp-for="Password" placeholder="Password" />
+            <span asp-validation-for="Password"></span>
+        
+        <div class="form-check mb-2 mr-sm-2">
+                <input asp-for="RememberMe" class="form-check-input" type="checkbox" id="inlineFormCheck">
+                <label asp-for="RememberMe" class="form-check-label" for="inlineFormCheck">
+                  Remember me
+                </label>
+              </div>
+        <button type="submit" class="btn btn-primary btn-lg mb-2" >Login</button>
+    </form>
+</div>
+

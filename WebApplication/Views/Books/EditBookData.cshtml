@@ -9,19 +9,19 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <label asp-for="Title">Book's title</label>
-            <input type="text" maxlength="20" asp-for="Title" class="form-control" placeholder="War and Peace" value="@Model.Title">
+            <input type="text" maxlength="100" asp-for="Title" class="form-control" placeholder="War and Peace" value="@Model.Title">
             <span asp-validation-for="Title"></span>
         </div>
         <div class="form-group col-md-6">
             <label asp-for="Author">Book's author</label>
-            <input asp-for="Author" maxlength="40" type="text" class="form-control" placeholder="Leo Tolstoy" value="@Model.Author">
+            <input asp-for="Author" maxlength="100" type="text" class="form-control" placeholder="Leo Tolstoy" value="@Model.Author">
             <span asp-validation-for="Author"></span>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
             <label asp-for="Genre">Book's genre</label>
-            <input type="text" maxlength="20" asp-for="Genre" class="form-control" placeholder="Novel" value="@Model.Genre">
+            <input type="text" maxlength="100" asp-for="Genre" class="form-control" placeholder="Novel" value="@Model.Genre">
         </div>
     </div>
     <div>

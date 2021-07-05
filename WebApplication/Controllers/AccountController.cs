@@ -10,6 +10,7 @@ using BLL.Interfaces;
 using DTO.Entities;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 //using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -21,15 +22,18 @@ namespace WebApplication.Controllers
 {
     public class AccountController : Controller
     {
-        private IBLO _blo;
+        private readonly IBLO _blo;
         public AccountController(IBLO blo)
         {
             _blo = blo;
         }
-
+        
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> EditProfile(UserProfileViewModel model)
         {
+           // if(!User.Identity.IsAuthenticated)
+                
             if (ModelState.IsValid)
             {
                 var user= await  _blo.GetUserByUserNameAsync(User.Identity.Name,true);
@@ -76,23 +80,22 @@ namespace WebApplication.Controllers
         {
             using var reader = new BinaryReader(avatar.OpenReadStream());
             byte[] byteArr = reader.ReadBytes((int)avatar.Length);
-            var jpegQuality = 50; 
-            Image image; 
-            using (var inputStream = new MemoryStream(byteArr)) {
-                image = Image.FromStream(inputStream);
-                var jpegEncoder = ImageCodecInfo.GetImageDecoders() 
-                    .First(c => c.FormatID == ImageFormat.Jpeg.Guid); 
-                var encoderParameters = new EncoderParameters(1); 
-                encoderParameters.Param[0] = new EncoderParameter(Encoder.Quality, jpegQuality); 
-                Byte[] outputBytes; 
-                using (var outputStream = new MemoryStream()) { 
-                    image.Save(outputStream, jpegEncoder, encoderParameters);
-                    outputBytes = outputStream.ToArray(); 
-                }
+            var jpegQuality = 50;
+            using var inputStream = new MemoryStream(byteArr);
+            var image = Image.FromStream(inputStream);
+            var jpegEncoder = ImageCodecInfo.GetImageDecoders() 
+                .First(c => c.FormatID == ImageFormat.Jpeg.Guid);
+            var encoderParameters = new EncoderParameters(1)
+            {
+                Param = {[0] = new EncoderParameter(Encoder.Quality, jpegQuality)}
+            };
+            using var outputStream = new MemoryStream();
+            image.Save(outputStream, jpegEncoder, encoderParameters);
+            var outputBytes = outputStream.ToArray();
 
-                return outputBytes;
-            }
+            return outputBytes;
         }
+        [Authorize]
         public async Task<IActionResult> Index(bool editMode=false,UserProfileViewModel errModel=null)
         {
             var model = new UserProfileViewModel()
@@ -102,28 +105,25 @@ namespace WebApplication.Controllers
             };
            // model.User.Avatar ??= new byte[] { };
             model.FavoriteBooks = await _blo.GetFavoriteBooksByUserAsync(model.User);
-            if (editMode)
-            {
-                model.Username = model.User.UserName;
-                model.FName = model.User.FirstName;
-                model.LName = model.User.LastName;
-                model.Email = model.User.Email;
-                model.City = model.User.City;
-                model.AdditionalInfo = model.User.AdditionalInfo;
-                model.DateOfBirth = model.User.DateOfBirth;
-            }
+            if (!editMode) return View(errModel is {IsErrorModel: true} ? errModel : model);
+            model.Username = model.User.UserName;
+            model.FName = model.User.FirstName;
+            model.LName = model.User.LastName;
+            model.Email = model.User.Email;
+            model.City = model.User.City;
+            model.AdditionalInfo = model.User.AdditionalInfo;
+            model.DateOfBirth = model.User.DateOfBirth;
 
-            if(errModel.IsErrorModel)
-                return View(errModel);
-            return View(model);
+            return View(errModel is {IsErrorModel: true} ? errModel : model);
         }
-        
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
         
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Register(RegistrationViewModel model)
         {
@@ -164,6 +164,7 @@ namespace WebApplication.Controllers
             return View(model);
         }
         
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult Login(string returnUrl = null)
         {
@@ -171,6 +172,7 @@ namespace WebApplication.Controllers
             return View(model);
         }
  
+        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
