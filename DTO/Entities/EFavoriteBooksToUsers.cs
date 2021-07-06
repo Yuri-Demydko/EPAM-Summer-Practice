@@ -1,4 +1,4 @@
-﻿namespace DTO.Entities
+﻿namespace Entities.Entities
 {
     public class EFavoriteBooksToUsers
     {

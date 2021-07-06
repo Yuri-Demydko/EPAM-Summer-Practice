@@ -1,20 +1,14 @@
-﻿using System;
+﻿
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using BLL.Interfaces;
-using DTO.Entities;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using Entities.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
-//using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication.Models;
 using WebApplication.Models.Account;
 using static System.String;
 
@@ -74,7 +68,7 @@ namespace WebApplication.Controllers
                 if(await _blo.UpdateUserDataAsync(model.User))
                     return RedirectToAction("Index", "Account");
             }
-            return RedirectToAction("Index", controllerName: "Account", new {editMode=true,errModel=model});
+            return RedirectToAction("Index", "Account", new {editMode=true,errModel=model});
         }
         private byte[] CompressAvatar(IFormFile avatar)
         {

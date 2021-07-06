@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Authentication.ExtendedProtection;
 using System.Threading.Tasks;
-using DAO.Interfaces;
-using DTO.Entities;
+using Entities.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace EFDAO
 {
-    public class DAO : IDAO
+    public class DAO : IDAO.IDAO
     {
         private readonly EFDBContext _context;
         private readonly UserManager<EUser> _userManager;
@@ -23,8 +21,8 @@ namespace EFDAO
             _signInManager = signInManager;
             
             //TEST
-            if (!_context.Users.Any() && !_context.Books.Any())
-                PrefillDatabaseWithTestData();
+            /*if (!_context.Users.Any() && !_context.Books.Any())
+                PrefillDatabaseWithTestData();*/
         }
 
         //TECH METHOD
@@ -327,7 +325,12 @@ namespace EFDAO
                     BookId = bookId,
                     UserId = user.Id
                 });
-                book.LikesCount++;
+                await _context.Database.ExecuteSqlRawAsync("update [dbo].[Books]" +
+                                                           "set LikesCount=LikesCount+1" +
+                                                           $"where Id={bookId}");
+                //_context.Books.FromSqlRaw();
+
+                // _context.Books.Update(book).Entity.LikesCount+=1;
             }
             else
             {
@@ -336,9 +339,13 @@ namespace EFDAO
                             in _context.FavoriteBooksToUsers
                         where (fbtu.BookId == bookId && fbtu.UserId == user.Id)
                         select fbtu).FirstOrDefaultAsync());
-                book.LikesCount--;
+               // book.LikesCount--;
+              // _context.Books.Update(book).Entity.LikesCount-=1;
+              await _context.Database.ExecuteSqlRawAsync("update [dbo].[Books]" +
+                                                         "set LikesCount=LikesCount-1" +
+                                                         $"where Id={bookId}");
             }
-            _context.Books.Update(book);
+            
             await _context.SaveChangesAsync();
         }
     }

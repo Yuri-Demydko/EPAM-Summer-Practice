@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 
-namespace DTO.Entities
+namespace Entities.Entities
 {
     public class EUser:IdentityUser
     {

@@ -1,12 +1,10 @@
 ﻿using BLL.Interfaces;
-using DAO.Interfaces;
-using DTO.Entities;
 using EFDAO;
+using Entities.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 
-
-namespace DependencyResolver
+namespace DepencyResolver
 {
     public class ServiceCollectionResolver
     {
@@ -15,7 +13,7 @@ namespace DependencyResolver
             //IServiceCollection services = new ServiceCollection();
             
             services.AddScoped<IBLO, BLL.Library.LibraryBlo>();
-            services.AddScoped<IDAO, EFDAO.DAO>();
+            services.AddScoped<IDAO.IDAO, EFDAO.DAO>();
             services.AddIdentity<EUser, IdentityRole>()
                             .AddEntityFrameworkStores<EFDBContext>()
                             .AddDefaultTokenProviders();

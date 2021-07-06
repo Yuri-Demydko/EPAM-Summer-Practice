@@ -10,3 +10,15 @@ C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Debug\netc
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Debug\netcoreapp3.1\DAL.Interfaces.csproj.CopyComplete
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Debug\netcoreapp3.1\DAL.Interfaces.dll
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Debug\netcoreapp3.1\DAL.Interfaces.pdb
+D:\Rider\EPAM.Practice.Library.Last\DAL.Interfaces\bin\Debug\netcoreapp3.1\DAL.Interfaces.deps.json
+D:\Rider\EPAM.Practice.Library.Last\DAL.Interfaces\bin\Debug\netcoreapp3.1\DAL.Interfaces.dll
+D:\Rider\EPAM.Practice.Library.Last\DAL.Interfaces\bin\Debug\netcoreapp3.1\DAL.Interfaces.pdb
+D:\Rider\EPAM.Practice.Library.Last\DAL.Interfaces\bin\Debug\netcoreapp3.1\DTO.dll
+D:\Rider\EPAM.Practice.Library.Last\DAL.Interfaces\bin\Debug\netcoreapp3.1\DTO.pdb
+D:\Rider\EPAM.Practice.Library.Last\DAL.Interfaces\obj\Debug\netcoreapp3.1\DAL.Interfaces.csproj.AssemblyReference.cache
+D:\Rider\EPAM.Practice.Library.Last\DAL.Interfaces\obj\Debug\netcoreapp3.1\DAL.Interfaces.AssemblyInfoInputs.cache
+D:\Rider\EPAM.Practice.Library.Last\DAL.Interfaces\obj\Debug\netcoreapp3.1\DAL.Interfaces.AssemblyInfo.cs
+D:\Rider\EPAM.Practice.Library.Last\DAL.Interfaces\obj\Debug\netcoreapp3.1\DAL.Interfaces.csproj.CoreCompileInputs.cache
+D:\Rider\EPAM.Practice.Library.Last\DAL.Interfaces\obj\Debug\netcoreapp3.1\DAL.Interfaces.csproj.CopyComplete
+D:\Rider\EPAM.Practice.Library.Last\DAL.Interfaces\obj\Debug\netcoreapp3.1\DAL.Interfaces.dll
+D:\Rider\EPAM.Practice.Library.Last\DAL.Interfaces\obj\Debug\netcoreapp3.1\DAL.Interfaces.pdb

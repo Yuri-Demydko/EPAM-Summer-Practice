@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using DTO.Entities;
+using Entities.Entities;
 using Microsoft.AspNetCore.Identity;
 
-namespace DAO.Interfaces
+namespace IDAO
 {
     public interface IDAO
     {

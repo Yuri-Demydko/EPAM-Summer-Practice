@@ -1,9 +1,7 @@
-﻿using System.Collections;
+﻿
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.IO;
-using System.Net.Mime;
-using DTO.Entities;
+using Entities.Entities;
 using Microsoft.AspNetCore.Http;
 
 namespace WebApplication.Models.Account

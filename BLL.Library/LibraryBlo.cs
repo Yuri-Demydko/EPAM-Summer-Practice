@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BLL.Interfaces;
-using DAO.Interfaces;
-using DTO.Entities;
+using Entities.Entities;
 using Microsoft.AspNetCore.Identity;
 
 namespace BLL.Library
 {
     public class LibraryBlo : IBLO
     {
-        private readonly IDAO _dao;
-        public LibraryBlo(IDAO dao) => _dao = dao;
+        private readonly IDAO.IDAO _dao;
+        public LibraryBlo(IDAO.IDAO dao) => _dao = dao;
         public async Task<IdentityResult> AddUserAsync(EUser user, string password) => await _dao.AddUserAsync(user, password);
         public async Task SignInUserAsync(EUser user, bool isPersistent) => await _dao.SignInUserAsync(user, isPersistent);
         public async Task<SignInResult> PasswordSignInAsync(string login, string password, bool remember,

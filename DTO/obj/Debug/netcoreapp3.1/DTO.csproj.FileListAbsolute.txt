@@ -7,3 +7,12 @@ C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\netcoreapp3.1\D
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\netcoreapp3.1\DTO.csproj.CoreCompileInputs.cache
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\netcoreapp3.1\DTO.dll
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DTO\obj\Debug\netcoreapp3.1\DTO.pdb
+D:\Rider\EPAM.Practice.Library.Last\DTO\bin\Debug\netcoreapp3.1\DTO.deps.json
+D:\Rider\EPAM.Practice.Library.Last\DTO\bin\Debug\netcoreapp3.1\DTO.dll
+D:\Rider\EPAM.Practice.Library.Last\DTO\bin\Debug\netcoreapp3.1\DTO.pdb
+D:\Rider\EPAM.Practice.Library.Last\DTO\obj\Debug\netcoreapp3.1\DTO.csproj.AssemblyReference.cache
+D:\Rider\EPAM.Practice.Library.Last\DTO\obj\Debug\netcoreapp3.1\DTO.AssemblyInfoInputs.cache
+D:\Rider\EPAM.Practice.Library.Last\DTO\obj\Debug\netcoreapp3.1\DTO.AssemblyInfo.cs
+D:\Rider\EPAM.Practice.Library.Last\DTO\obj\Debug\netcoreapp3.1\DTO.csproj.CoreCompileInputs.cache
+D:\Rider\EPAM.Practice.Library.Last\DTO\obj\Debug\netcoreapp3.1\DTO.dll
+D:\Rider\EPAM.Practice.Library.Last\DTO\obj\Debug\netcoreapp3.1\DTO.pdb

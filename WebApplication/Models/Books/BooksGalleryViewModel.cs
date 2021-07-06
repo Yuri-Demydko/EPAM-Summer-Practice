@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using DTO.Entities;
+using Entities.Entities;
 
 namespace WebApplication.Models.Books
 {

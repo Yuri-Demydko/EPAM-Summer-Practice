@@ -1,38 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.EF\\DAL.EF.csproj": {}
+    "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.EF\\DAL.EF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.EF\\DAL.EF.csproj": {
+    "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.EF\\DAL.EF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.EF\\DAL.EF.csproj",
+        "projectUniqueName": "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.EF\\DAL.EF.csproj",
         "projectName": "DAL.EF",
-        "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.EF\\DAL.EF.csproj",
-        "packagesPath": "C:\\Users\\yurid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.EF\\obj\\",
+        "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.EF\\DAL.EF.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.EF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\yurid\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.Interfaces\\DAL.Interfaces.csproj": {
-                "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.Interfaces\\DAL.Interfaces.csproj"
+              "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.Interfaces\\DAL.Interfaces.csproj": {
+                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.Interfaces\\DAL.Interfaces.csproj"
               },
-              "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DTO\\DTO.csproj"
+              "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj": {
+                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj"
               }
             }
           }
@@ -74,10 +72,6 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.7, )"
-            },
-            "Ninject": {
-              "target": "Package",
-              "version": "[4.0.0-beta-0134, )"
             }
           },
           "imports": [
@@ -95,36 +89,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.Interfaces\\DAL.Interfaces.csproj": {
+    "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.Interfaces\\DAL.Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.Interfaces\\DAL.Interfaces.csproj",
+        "projectUniqueName": "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.Interfaces\\DAL.Interfaces.csproj",
         "projectName": "DAL.Interfaces",
-        "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.Interfaces\\DAL.Interfaces.csproj",
-        "packagesPath": "C:\\Users\\yurid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.Interfaces\\obj\\",
+        "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.Interfaces\\DAL.Interfaces.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.Interfaces\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\yurid\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DTO\\DTO.csproj"
+              "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj": {
+                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj"
               }
             }
           }
@@ -163,28 +155,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DTO\\DTO.csproj": {
+    "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DTO\\DTO.csproj",
+        "projectUniqueName": "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj",
         "projectName": "DTO",
-        "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DTO\\DTO.csproj",
-        "packagesPath": "C:\\Users\\yurid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DTO\\obj\\",
+        "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\yurid\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -210,10 +200,6 @@
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.7, )"
-            },
-            "Ninject": {
-              "target": "Package",
-              "version": "[4.0.0-beta-0134, )"
             }
           },
           "imports": [
@@ -231,7 +217,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
