@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Threading.Tasks;
 using BLL.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebApplication.Models;
@@ -9,6 +10,7 @@ using WebApplication.Models.Books;
 
 namespace WebApplication.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -46,8 +48,13 @@ namespace WebApplication.Controllers
             return View(new ErrorViewModel {RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier});
         }
 
+        [AllowAnonymous]
+        public IActionResult Start()
+        {
+            return View();
+        }
         [HttpPost]
-        public async Task<RedirectToActionResult> SearchForBooks(BooksGalleryViewModel model)
+        public IActionResult SearchForBooks(BooksGalleryViewModel model)
         {
             if (string.IsNullOrWhiteSpace(model.SearchString))
                 return RedirectToAction("Index", "Home");

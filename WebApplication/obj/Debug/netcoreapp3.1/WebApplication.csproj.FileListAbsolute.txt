@@ -34,7 +34,6 @@ C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netc
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\Ninject.dll
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
@@ -99,11 +98,6 @@ C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netc
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Books\UploadBook.cshtml.g.cs
-C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\Aspose.PDF.dll
-C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
-C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
-C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\System.Diagnostics.PerformanceCounter.dll
-C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Books\BookPage.cshtml.g.cs
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Books\EditBookData.cshtml.g.cs
 D:\Rider\EPAM.Practice.Library.Last\WebApplication\bin\Debug\netcoreapp3.1\appsettings.Development.json
@@ -214,3 +208,10 @@ D:\Rider\EPAM.Practice.Library.Last\WebApplication\obj\Debug\netcoreapp3.1\WebAp
 D:\Rider\EPAM.Practice.Library.Last\WebApplication\obj\Debug\netcoreapp3.1\WebApplication.pdb
 D:\Rider\EPAM.Practice.Library.Last\WebApplication\obj\Debug\netcoreapp3.1\WebApplication.genruntimeconfig.cache
 D:\Rider\EPAM.Practice.Library.Last\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\Start.cshtml.g.cs
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\Start.cshtml.g.cs
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout-Start.cshtml.g.cs

@@ -126,7 +126,6 @@ namespace EFDAO
                         Email = u.Email
                     }).FirstOrDefaultAsync();
             }
-
             return user ?? throw new ArgumentException("User with that username not exists");
         }
 

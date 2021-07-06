@@ -1,6 +1,178 @@
-﻿<div class="jumbotron jumbotron-fluid">
+﻿<style>
+.jumbotron-fluid
+{
+padding-top: 48px;
+padding-bottom: 48px;
+}
+.list-group .list-group-flush
+{
+background: transparent;
+}
+.list-group-item
+{
+background: transparent;
+font-weight: 300;
+}
+h2
+{
+font-size: xxx-large!important;
+}
+</style>
+@{
+    Layout = "_Layout-Start";
+    string partOfTextEN = "";
+    string partOfTextRU = "";
+    string action = "";
+    string controller = "";
+    string linkTextEN = "";
+    string linkTextRU = "";
+    if(!User.Identity.IsAuthenticated)
+    {
+        controller = "Account";
+        action = "Login";
+        linkTextEN = "sign in";
+        linkTextRU = "авторизоваться";
+        partOfTextRU = "Если хотите протестировать возможности проекта, вам придется ";
+        partOfTextEN = "If you want to test feautures of that project, you have to ";
+    }
+    else
+    {
+        controller = "Home";
+        action = "Index";
+        linkTextEN = "Home page";
+        linkTextRU = "Домашней страницы";
+        partOfTextRU = "Вижу, вы уже авторизованы. Что-же, тогда вы можете протестировать возможности данной библиотеки. Предлагаю начать c";
+        partOfTextEN = "I see, you are signed in. So, now you can test that library's features.  Let's start from ";
+    }
+    
+    
+}
+<div class="jumbotron jumbotron-fluid" name="top">
     <div class="container">
-        <h1 class="display-4">Welcome in Y-Library</h1>
-        <p class="lead">This is a simple E-Library project developed by Yuri Demydko as EPAM summer practice project.</p>
+        <h1 class="display-4">Welcome in Y-Library <span class="badge badge-primary">EN</span></h1>
+        <p class="lead">This is a simple E-Library project developed by Yuri Demydko as EPAM summer practice project. @partOfTextEN <a asp-controller="@controller" asp-action="@action">@linkTextEN</a>.
+            By the way, your account data securely stores in database in MS Azure. All password in DB are encrypted.</p>
+        <p class="text-sm-center text-muted" style="font-weight: 300">To get more info about that project, scroll down</p>
     </div>
+</div>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Добро пожаловать в Y-Library <span class="badge badge-danger">RU</span></h1>
+        <p class="lead">Это проект небольшой электронной библиотеки, разработанный Юрием Демыдко в рамках летней практики в EPAM. @partOfTextRU <a asp-controller="@controller" asp-action="@action">@linkTextRU</a>.
+            Кстати, ваши данные хранятся под защитой в базе данных облака MS Azure. Все пароли шифруются.</p>
+        <p class="text-sm-center text-muted" style="font-weight: 300">Чтобы узнать о проекте больше, пролистайте ниже</p>
+    </div>
+</div>
+<div class="container-fluid" style="padding-left: 0; padding-right: 0">
+    <div class="row">
+        <div class="col">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container" >
+                    <h2 class="display-4">About functional <span class="badge badge-primary">EN</span></h2>
+                    <p class="lead">All features (and some more) were developed according to practice task. Here's their list:</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">CRUD operations with books</li>
+                        <li class="list-group-item">Authenentification via login/password pair</li>
+                        <li class="list-group-item">Only authentificated user granted to commit CRUD operations with library's content</li>
+                        <li class="list-group-item">Users' profiles with availability to edit user's data</li>
+                        <li class="list-group-item">Search for specific book(s) by it's title, author, genre or description</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h2 class="display-4">О функционале <span class="badge badge-danger">RU</span></h2>
+                    <p class="lead">Все функции (а также немного больше) были сделаны в соответствии с заданием практики. Вот их список:</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">CRUD операции с книгами</li>
+                        <li class="list-group-item">Аутентификация с помощью пары логин/пароль</li>
+                        <li class="list-group-item">Только аутентифицированный пользователь может работать (CRUD) c книгами</li>
+                        <li class="list-group-item">Профили пользователей с возможностью их редактирования</li>
+                        <li class="list-group-item">Поиск книги (книг) по названию, автору, жанру или описанию</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="padding-left: 0; padding-right: 0">
+    <div class="row">
+        <div class="col">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h2 class="display-4">Technologies <span class="badge badge-primary">EN</span></h2>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Three-layer architecture</li>
+                        <li class="list-group-item">Presentation layer made on ASP.NET Core MVC</li>
+                        <li class="list-group-item">Database made with SQL Server and Entity Framework ORM</li>
+                        <li class="list-group-item">Authentification based on Microsoft.Identity</li>
+                        <li class="list-group-item">Frontend based on Bootstrap 4</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h2 class="display-4">Технологии <span class="badge badge-danger">RU</span></h2>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Трехслойная архитектура</li>
+                        <li class="list-group-item">Слой представления - ASP.NET Core</li>
+                        <li class="list-group-item">База данных - SQL Server и ОРМ Entity Framework</li>
+                        <li class="list-group-item">Аутентификация - Microsoft.Identity</li>
+                        <li class="list-group-item">Фронтенд основан на Bootstrap 4</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="padding-left: 0; padding-right: 0">
+    <div class="row">
+        <div class="col">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h2 class="display-4">Some facts <span class="badge badge-primary">EN</span></h2>
+                    <p class="lead">It's absolutely unnecessary, but why not?</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">It is the only page with russian language. All other pages only in english</li>
+                        <li class="list-group-item">Why? Just because I want</li>
+                        <li class="list-group-item">I think, the most aesthetic item on that site is bookcovers' design</li>
+                        <li class="list-group-item">There are my GitHub: https://github.com/Yuri-Demydko</li>
+                        <li class="list-group-item">This project was made with soul :)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h2 class="display-4">Немного фактов <span class="badge badge-danger">RU</span></h2>
+                    <p class="lead">Это совершенно необязательно, но почему бы и нет?</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Это единственная страница с русским языком на этом сайте</li>
+                        <li class="list-group-item">Зачем? Да просто я так захотел</li>
+                        <li class="list-group-item">Думаю, самая эстетичная штука на сайте - обложки книжек</li>
+                        <li class="list-group-item">Вот мой Гитхаб: https://github.com/Yuri-Demydko</li>
+                        <li class="list-group-item">Этот проект сделан с душой :)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col"><hr>
+        </div>
+        <div class="col">
+            <div class="btn-group" role="group" style="width:100%" aria-label="Basic example">
+                <a class="btn btn-outline-secondary btn-sm" href="#top">To the top</a>
+                <a class="btn btn-outline-secondary btn-sm" href="#top">Наверх</a>
+            </div>
+        </div>
+        <div class="col"><hr></div>
+        </div>
 </div>

@@ -189,7 +189,7 @@ namespace WebApplication.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Неправильный логин и (или) пароль");
+                    ModelState.AddModelError("", "Incorrect login or password");
                 }
             }
             return View(model);
