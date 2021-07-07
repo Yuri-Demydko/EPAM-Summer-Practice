@@ -2,8 +2,9 @@
 @{
     ViewBag.Title = "Edit book's data";
 }
-<h2>Updating data of "@Model.Title"</h2>
-<form method="post" asp-controller="Books" asp-action="EditBookData">
+
+<form style="width:80vw;margin: 1rem auto;" method="post" asp-controller="Books" asp-action="EditBookData">
+    <h2>Updating data of "@Model.Title"</h2>
     <div asp-validation-summary="All"></div>
     <input type="hidden" asp-for="Id" value="@Model.Id"/>
     <div class="form-row">

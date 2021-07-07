@@ -19,14 +19,14 @@
 <body>
 <header>
     <nav id="navbar" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><b style="word-break: keep-all;">Y-Library</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
         <div class="container">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><b>Y-Library</b></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-            <ul class="navbar-nav flex-grow-1">
+            <ul class="navbar-nav flex-grow-1 nav-fill">
                 @if (User.Identity.IsAuthenticated)
                 {
                         @*<li class="nav-item">
@@ -57,14 +57,15 @@
                     </li>
                 }
             </ul>
-            @if (User.Identity.IsAuthenticated)
-            {
-                <form class="nav-item" method="post" asp-action="Logout" asp-controller="Account">
-                    <input style="border:none; background: transparent" type="submit" class="nav-link text-danger" asp-area="" asp-controller="Account" asp-action="Logout" value="Logout"/>
-                </form>
-            }
+           
             </div>
         </div>
+         @if (User.Identity.IsAuthenticated)
+                    {
+                        <form class="nav-item" method="post" asp-action="Logout" asp-controller="Account">
+                            <input style="border:none; background: transparent" type="submit" class="nav-link text-danger" asp-area="" asp-controller="Account" asp-action="Logout" value="Logout"/>
+                        </form>
+                    }
     </nav>
 </header>
 <div class="container-fluid">

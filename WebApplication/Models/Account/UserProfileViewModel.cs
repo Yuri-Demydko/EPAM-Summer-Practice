@@ -12,6 +12,8 @@ namespace WebApplication.Models.Account
         public bool EditingMode { get; set; }
         public IList<EBook> FavoriteBooks { get; set; }
 
+        public bool StrangerMode = false;
+
         public bool IsErrorModel = false;
         //-----IF EDITING
         [Display(Name = "Additional info")]

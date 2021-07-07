@@ -17,6 +17,9 @@ h2
 {
 font-size: xxx-large!important;
 }
+@{
+  ViewData["Title"] = "Welcome";
+}
 </style>
 @{
     Layout = "_Layout-Start";
@@ -44,26 +47,24 @@ font-size: xxx-large!important;
         partOfTextRU = "Вижу, вы уже авторизованы. Что-же, тогда вы можете протестировать возможности данной библиотеки. Предлагаю начать c";
         partOfTextEN = "I see, you are signed in. So, now you can test that library's features.  Let's start from ";
     }
-    
-    
 }
-<div class="jumbotron jumbotron-fluid" name="top">
+<div class="jumbotron jumbotron-fluid" style="height: 45.5vh"  name="top">
     <div class="container">
-        <h1 class="display-4">Welcome in Y-Library <span class="badge badge-primary">EN</span></h1>
+        <h1 class="display-2">Welcome to Y-Library <span class="badge badge-primary">EN</span></h1>
         <p class="lead">This is a simple E-Library project developed by Yuri Demydko as EPAM summer practice project. @partOfTextEN <a asp-controller="@controller" asp-action="@action">@linkTextEN</a>.
             By the way, your account data securely stores in database in MS Azure. All password in DB are encrypted.</p>
         <p class="text-sm-center text-muted" style="font-weight: 300">To get more info about that project, scroll down</p>
     </div>
 </div>
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid" style="height: 45.5vh">
     <div class="container">
-        <h1 class="display-4">Добро пожаловать в Y-Library <span class="badge badge-danger">RU</span></h1>
-        <p class="lead">Это проект небольшой электронной библиотеки, разработанный Юрием Демыдко в рамках летней практики в EPAM. @partOfTextRU <a asp-controller="@controller" asp-action="@action">@linkTextRU</a>.
+        <h1 class="display-2">Приветствую в Y-Library <span class="badge badge-danger">RU</span></h1>
+        <p class="lead">Это небольшая электронная библиотека, разработанная Юрием Демыдко в рамках летней практики в EPAM. @partOfTextRU <a asp-controller="@controller" asp-action="@action">@linkTextRU</a>.
             Кстати, ваши данные хранятся под защитой в базе данных облака MS Azure. Все пароли шифруются.</p>
         <p class="text-sm-center text-muted" style="font-weight: 300">Чтобы узнать о проекте больше, пролистайте ниже</p>
     </div>
-</div>
-<div class="container-fluid" style="padding-left: 0; padding-right: 0">
+</div >
+<div class="container-fluid" id="funcs" style="display: none; padding-left: 0; padding-right: 0">
     <div class="row">
         <div class="col">
             <div class="jumbotron jumbotron-fluid">
@@ -84,7 +85,7 @@ font-size: xxx-large!important;
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                     <h2 class="display-4">О функционале <span class="badge badge-danger">RU</span></h2>
-                    <p class="lead">Все функции (а также немного больше) были сделаны в соответствии с заданием практики. Вот их список:</p>
+                    <p class="lead">Все функции (даже чуть больше) были сделаны в соответствии с заданием практики. Вот их список:</p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">CRUD операции с книгами</li>
                         <li class="list-group-item">Аутентификация с помощью пары логин/пароль</li>
@@ -97,7 +98,7 @@ font-size: xxx-large!important;
         </div>
     </div>
 </div>
-<div class="container-fluid" style="padding-left: 0; padding-right: 0">
+<div class="container-fluid" id="techs"  style="display: none; padding-left: 0; padding-right: 0">
     <div class="row">
         <div class="col">
             <div class="jumbotron jumbotron-fluid">
@@ -129,7 +130,7 @@ font-size: xxx-large!important;
         </div>
     </div>
 </div>
-<div class="container-fluid" style="padding-left: 0; padding-right: 0">
+<div class="container-fluid" id="facts"  style="display: none; padding-left: 0; padding-right: 0">
     <div class="row">
         <div class="col">
             <div class="jumbotron jumbotron-fluid">
@@ -167,12 +168,41 @@ font-size: xxx-large!important;
     <div class="row">
         <div class="col"><hr>
         </div>
-        <div class="col">
+        <div class="col" style="margin-top: 2vh">
             <div class="btn-group" role="group" style="width:100%" aria-label="Basic example">
-                <a class="btn btn-outline-secondary btn-sm" href="#top">To the top</a>
-                <a class="btn btn-outline-secondary btn-sm" href="#top">Наверх</a>
+                <button class="btn btn-outline-secondary btn-sm" onclick="fOut()">To the top</button>
+                <button class="btn btn-outline-secondary btn-sm" onclick="fOut()">Наверх</button>
             </div>
         </div>
         <div class="col"><hr></div>
-        </div>
+    </div>
 </div>
+<script>
+$(document).scroll(function ()
+                       {
+                           $("#funcs").fadeIn(500,function (){
+                               $("#techs").fadeIn(500,function ()
+                               {
+                                   $("#facts").fadeIn(500,function ()
+                                   {
+                                       //end
+                                   });
+                           });
+                           });
+                        });
+
+function fOut () 
+                       {
+                           $("html, body").animate({ scrollTop: 0 }, 250);
+                           $("#funcs").fadeOut(200,function (){
+                               $("#techs").fadeOut(200,function ()
+                               {
+                                   $("#facts").fadeOut(200,function ()
+                                   {
+                                       //end
+                                   });
+                           });
+                           });
+                        }
+    
+</script>

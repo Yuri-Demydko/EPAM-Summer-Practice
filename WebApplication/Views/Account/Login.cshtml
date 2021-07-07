@@ -1,9 +1,11 @@
 ﻿@model WebApplication.Models.Account.LoginViewModel
- 
-<div class="jumbotron jumbotron-fluid">
+ @{
+   ViewData["Title"] = "Login";
+ }
+<div class="jumbotron jumbotron-fluid" style="width: 80vw; margin: 0 auto;">
     <div class="container">
         <h1 class="display-4">Just sign in</h1>
-        <p class="lead">To get access to all features of that E-Library</p>
+        <p class="lead">To get access to all features of Y-Library</p>
     </div>
     <hr class="my-4" style="width: 96%">
     
@@ -17,16 +19,17 @@
         <input type="password" class="form-control form-control-lg mb-2 mr-sm-2" asp-for="Password" placeholder="Password"/>
         <span asp-validation-for="Password"></span>
 
+        <button type="submit" class="btn btn-primary btn-lg mb-2 mr-sm-2">Login</button>
         <div class="form-check mb-2 mr-sm-2">
             <input asp-for="RememberMe" class="form-check-input" type="checkbox" id="inlineFormCheck">
                     <label asp-for="RememberMe" class="form-check-label" for="inlineFormCheck">
                         Remember me
                     </label>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg mb-2">Login</button>
+        
     </form>
-    <div class="align-content-center">
-            <a class="btn btn-link" style="font-weight:300;" asp-controller="Account" asp-action="Register">Have no account? Just sign up</a>
+    <div style="width: fit-content; margin: 0 auto">
+            <a class="btn btn-link" style="font-weight:300;" asp-controller="Account" asp-action="Register">Have no account? So, sign up</a>
     </div>
     </div>
 

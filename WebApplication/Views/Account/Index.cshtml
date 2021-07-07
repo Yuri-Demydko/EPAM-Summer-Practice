@@ -1,53 +1,11 @@
 ﻿@model WebApplication.Models.Account.UserProfileViewModel
-
+@{
+  ViewData["Title"] = "Personal Page";
+}
 <!DOCTYPE html>
 
 <html>
 <style>
-.container {
-  display: grid;
-  grid-template-columns: 0.8fr 1fr 1.2fr 1fr;
-  grid-template-rows: 0.7fr 0.6fr 1.4fr 1.3fr;
-  gap: 10px 10px;
-  grid-auto-flow: row dense;
-  justify-content: stretch;
-  align-content: stretch;
-  justify-items: stretch;
-  align-items: stretch;
-  grid-template-areas:
-    "user-name user-name additional-info additional-info"
-    "user-info user-info additional-info additional-info"
-    "own-books own-books own-books own-books"
-    "fav-books fav-books fav-books fav-books";
-}
-
-.additional-info {
-
-  justify-self: stretch;
-  align-self: stretch;
-  grid-area: additional-info;
-}
-
-.own-books {
-
-  align-self: start;
-  grid-area: own-books;
-}
-
-.fav-books {
-
-  align-self: start;
-  grid-area: fav-books;
-}
-
-.user-info { grid-area: user-info; }
-
-.user-name {
-
-  justify-self: stretch;
-  align-self: stretch;
-  grid-area: user-name;
-}
 
 .InfoTextArea {
   width: 100%;
@@ -57,6 +15,7 @@
   border: none;
   background-color: transparent;
   color: black;
+  padding: 0;
 }
 
 .book-card{
@@ -89,79 +48,130 @@ box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
     //if not editing mode, then just show user's info and switch mode button                                    
     @if(!Model.EditingMode)
      {
-         <div class="container" style="width: 90%; height: 80%">
-           <div class="additional-info">
-                            <h5>Additional info about @Model.User.UserName</h5>
-                           <textarea disabled class="InfoTextArea"> @Model.User.AdditionalInfo</textarea>
-                        </div>
-           <div class="own-books"><h3>@Model.User.UserName's own books</h3>
-               <div class="card card-container" style="max-width: 80vw;overflow: auto">
-                                                       <div class="row flex-nowrap" style="padding-left: 30px; padding-right: 30px">
-                                                           @foreach (var book in Model.User.OwnBooks)
-                                                           {
-                                                               <div class="book-card card text-white bg-dark mb-3 text-center" style="width: 13rem; height: 18rem;  min-width: 13rem; min-height: 18rem; display: inline-block; border: none; @book.CardBg">
-                                                                   <div class="card-header">
-                                                                       @book.Author
-                                                                   </div>
-                                                                   <div class="card-body">
-                                                                       <h4 class="card-title">@book.Title</h4>
-                                                                       <h5 class="card-subtitle">@book.Genre</h5>
-                                                                       <p class="card-text" style="font-size: small">
-                                                                       </p>
-                                                                       <a asp-controller="Books" asp-action="BookPage" asp-route-Id="@book.Id" class="badge badge-light" style="position:absolute; left: 5%; bottom: 5%;">View</a>
-                                                                       <span class="badge badge-success" style="position:absolute; right: 5%; bottom: 5%;">Likes: @book.LikesCount</span>
-                                                                   </div>
-                                                               </div>
-                                                           }
-                                                       </div>
-                                                   </div></div>
-             <div class="fav-books">
-                 <h3>@Model.User.UserName's favorite books</h3>
-                 <div class="card card-container" style="max-width: 80vw;overflow: auto">
-                                      <div class="row flex-nowrap" style="padding-left: 30px; padding-right: 30px">
-                                                               @foreach (var book in Model.FavoriteBooks)
-                                                               {
-                                                                   <div class="book-card card text-white bg-dark mb-3 text-center" style="width: 13rem; height: 18rem;  min-width: 13rem; min-height: 18rem; display: inline-block; border: none; @book.CardBg">
-                                                                       <div class="card-header">
-                                                                           @book.Author
-                                                                       </div>
-                                                                       <div class="card-body">
-                                                                           <h4 class="card-title">@book.Title</h4>
-                                                                           <h5 class="card-subtitle">@book.Genre</h5>
-                                                                           <p class="card-text" style="font-size: small">
-                                                                           </p>
-                                                                           <a asp-controller="Books" asp-action="BookPage" asp-route-Id="@book.Id" class="badge badge-light" style="position:absolute; left: 5%; bottom: 5%;">View</a>
-                                                                           <span class="badge badge-success" style="position:absolute; right: 5%; bottom: 5%;">Likes: @book.LikesCount</span>
-                                                                       </div>
-                                                                   </div>
-                                                               }
-                                                           </div>
-                                  </div>
+         <div class="container-fluid d-flex flex-column" style="margin-left: 8vw;">
+             <div class=" d-flex justify-content-between" style="margin-bottom: 3rem!important; width: 80vw!important; margin-top: 1rem!important;">
+                 <div class="d-flex flex-column p-1">
+                     <div class="">
+                         <h3>@Model.User.UserName</h3>
+                     </div>
+                     <div class="">
+                         @if (Model.User.Avatar != null && Model.User.Avatar.Length > 0)
+                         {
+                             <img src="data:image;base64,@Convert.ToBase64String(Model.User.Avatar)" class="avatar-pic" alt="Avatar"/>
+                         }
+                         else
+                         {
+                             <img src="/images/default-avatar.jpg" alt="Avatar" class="avatar-pic" style="">
+                     
+                         }
+                     </div>
+                     @if (!Model.StrangerMode){<div class=""><a class="btn btn-link btn-sm" asp-controller="Account" asp-action="Index" asp-route-editMode="true">Edit profile</a></div>}
+                 <div class="d-flex flex-column justify-content-start p-1">
+                                   <div><b>First name:</b> @Model.User.FirstName</div>
+                                  <div><b>Last name:</b> @Model.User.LastName</div>
+                                  <div><b>Date of birth:</b> @Model.User.DateOfBirth</div>
+                                  <div><b>City:</b> @Model.User.City</div>
+                              </div>
+                     </div>
+                 <div class="p-1" style="width: 40vw">
+                     @if (Model.StrangerMode)
+                     {<h5>Additional info about @Model.User.UserName</h5>}
+                     else
+                     {<h5>Your additional info</h5>}
+                     <textarea disabled class="InfoTextArea" style="overflow: auto"> @Model.User.AdditionalInfo</textarea>
+                 </div>
              </div>
-             <div class="user-name">
-                 <h3>@Model.User.UserName</h3>
-                 @if (Model.User.Avatar != null && Model.User.Avatar.Length > 0)
+             <div class="p-1 mb-2">
+                                  @if (Model.StrangerMode)
+                                  {<h3>@Model.User.UserName's own books</h3>}
+                                  else
+                                  {<h3>Your own books</h3>}
+                                  @if(Model.User.OwnBooks!=null && Model.User.OwnBooks.Count>0)
                                   {
-                                      <img src="data:image;base64,@Convert.ToBase64String(Model.User.Avatar)" class="avatar-pic" alt="Avatar"/>
+                                      <div class="card card-container" style="max-width: 80vw;overflow: auto; border: 5px solid #007bff;
+    background: rgb(0,123,255);
+background: linear-gradient(0deg, rgba(0,123,255,1) 0%, rgba(255,255,255,1) 36%);">
+                                          <div class="row flex-nowrap" style="padding-left: 30px; padding-right: 30px">
+                                              @foreach (var book in Model.User.OwnBooks)
+                                              {
+                                                  <div class="book-card card text-white bg-dark mb-3 text-center" style="width: 13rem; height: 18rem;  min-width: 13rem; min-height: 18rem; display: inline-block; border: none; @book.CardBg">
+                                                      <div class="card-header">
+                                                          @book.Author
+                                                      </div>
+                                                      <div class="card-body">
+                                                          <h4 class="card-title">@book.Title</h4>
+                                                          <h5 class="card-subtitle">@book.Genre</h5>
+                                                          <p class="card-text" style="font-size: small">
+                                                          </p>
+                                                          <a asp-controller="Books" asp-action="BookPage" asp-route-Id="@book.Id" class="badge badge-light" style="position:absolute; left: 5%; bottom: 5%;">View</a>
+                                                          <span class="badge badge-success" style="position:absolute; right: 5%; bottom: 5%;">Likes: @book.LikesCount</span>
+                                                      </div>
+                                                  </div>
+                                              }
+                                          </div>
+                                      </div>
                                   }
                                   else
                                   {
-                                      <img src="/images/default-avatar.jpg" alt="Avatar" class="avatar-pic" style="">}
-                                  <a class="btn btn-outline-dark btn-sm" style="display: block; width: 40%" asp-controller="Account" asp-action="Index" asp-route-editMode="true">Edit profile</a>
-
-             </div>
-             <div class="user-info">
-                  <p><b>First name:</b> @Model.User.FirstName</p>
-                 <p><b>Last name:</b> @Model.User.LastName</p>
-                 <p><b>Date of birth:</b> @Model.User.DateOfBirth</p>
-                 <p><b>City:</b> @Model.User.City</p>
-             </div>
+                                      string who = "you haven't";
+                                      if (Model.StrangerMode)
+                                          who = Model.User.UserName+" hasn't";
+                                      <div class="jumbotron jumbotron-fluid" style="width: 40vw">
+                                          <div class="container">
+                                              <h1 class="display-4">Empty</h1>
+                                              <p class="lead">Looks like @who any own books :\</p>
+                                          </div>
+                                      </div>
+                                  }
+                 </div>
+             <div class="p-1">
+                                   @if (Model.StrangerMode)
+                                   {<h3>@Model.User.UserName's favorite books</h3>}
+                                   else
+                                   {<h3>Your favorite books</h3>}
+                                   @if(Model.FavoriteBooks!=null && Model.FavoriteBooks.Count>0)
+                                   {
+                                       <div class="card card-container" style="max-width: 80vw;overflow: auto; border: 5px solid #28a745;background: rgb(40,167,69);
+                                    background: linear-gradient(0deg, rgba(40,167,69,1) 0%, rgba(255,255,255,1) 36%);">
+                                           <div class="row flex-nowrap" style="padding-left: 30px; padding-right: 30px">
+                                               @foreach (var book in Model.FavoriteBooks)
+                                               {
+                                                   <div class="book-card card text-white bg-dark mb-3 text-center" style="width: 13rem; height: 18rem;  min-width: 13rem; min-height: 18rem; display: inline-block; border: none; @book.CardBg">
+                                                       <div class="card-header">
+                                                           @book.Author
+                                                       </div>
+                                                       <div class="card-body">
+                                                           <h4 class="card-title">@book.Title</h4>
+                                                           <h5 class="card-subtitle">@book.Genre</h5>
+                                                           <p class="card-text" style="font-size: small">
+                                                           </p>
+                                                           <a asp-controller="Books" asp-action="BookPage" asp-route-Id="@book.Id" class="badge badge-light" style="position:absolute; left: 5%; bottom: 5%;">View</a>
+                                                           <span class="badge badge-success" style="position:absolute; right: 5%; bottom: 5%;">Likes: @book.LikesCount</span>
+                                                       </div>
+                                                   </div>
+                                               }
+                                           </div>
+                                       </div>
+                                   }
+                                   else
+                                   {
+                                       string who = "you haven't";
+                                       if (Model.StrangerMode)
+                                           who = Model.User.UserName+" hasn't";
+                                       <div class="jumbotron jumbotron-fluid" style="width: 40vw">
+                                           <div class="container">
+                                               <h1 class="display-4">Empty</h1>
+                                               <p class="lead">Looks like @who any favorite books :\</p>
+                                               </div>
+                                           </div>
+                                   }
+                              </div>
          </div>
-         
      }
     else
     {
-        <form method="post" asp-controller="Account" asp-action="EditProfile" enctype="multipart/form-data" style="width:90%; height: 90%">
+        <form method="post" style="width:80vw;margin: 1rem auto;" asp-controller="Account" asp-action="EditProfile" enctype="multipart/form-data" style="width:90%; height: 90%">
+            <h2>Account editing</h2>
             @*<input type="hidden"value="@Model.User" asp-for="User"/>*@
             <div asp-validation-summary="All"></div>
             <div class="form-row">
@@ -217,7 +227,7 @@ box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
                 <textarea class="form-control" asp-for="AdditionalInfo">@Model.User.AdditionalInfo</textarea>
             </div>
             <div class="form-group">
-                            <label asp-for="OldPassword">Current password</label>
+                            <label asp-for="OldPassword"><b>Enter your Current password to commit changes</b></label>
                 <input type="password" class="form-control" asp-for="OldPassword" placeholder="Current password"/>
                 </div>
             <div>

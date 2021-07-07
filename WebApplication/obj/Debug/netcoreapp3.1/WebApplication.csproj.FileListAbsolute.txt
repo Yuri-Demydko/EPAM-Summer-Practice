@@ -215,3 +215,4 @@ C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netc
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\Start.cshtml.g.cs
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout-Start.cshtml.g.cs
+D:\Rider\EPAM.Practice.Library.Last\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout-Start.cshtml.g.cs

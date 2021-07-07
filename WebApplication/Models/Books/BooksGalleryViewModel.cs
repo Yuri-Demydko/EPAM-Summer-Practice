@@ -6,7 +6,7 @@ namespace WebApplication.Models.Books
 {
     public class BooksGalleryViewModel
     {
-        private const int  MAX_CARDS_ON_PAGE=20;
+        private const int  MAX_CARDS_ON_PAGE=30;
         private const int PAGE_DIAPASON = 10;
         public IList<EBook> Books { get; set; } = new List<EBook>();
         public int PageNum { get; set; }

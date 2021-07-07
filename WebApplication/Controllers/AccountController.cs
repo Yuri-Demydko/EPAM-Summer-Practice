@@ -90,13 +90,19 @@ namespace WebApplication.Controllers
             return outputBytes;
         }
         [Authorize]
-        public async Task<IActionResult> Index(bool editMode=false,UserProfileViewModel errModel=null)
+        public async Task<IActionResult> Index(bool editMode=false,UserProfileViewModel errModel=null,string ownerName=null)
         {
             var model = new UserProfileViewModel()
             {
-                User=await _blo.GetUserByUserNameAsync(User.Identity.Name,true),
                 EditingMode = editMode,
             };
+            if (ownerName == null)
+                model.User = await _blo.GetUserByUserNameAsync(User.Identity.Name, true);
+            else
+            {
+                model.User = await _blo.GetUserByUserNameAsync(ownerName, true);
+                model.StrangerMode = true;
+            }
            // model.User.Avatar ??= new byte[] { };
             model.FavoriteBooks = await _blo.GetFavoriteBooksByUserAsync(model.User);
             if (!editMode) return View(errModel is {IsErrorModel: true} ? errModel : model);
@@ -123,6 +129,17 @@ namespace WebApplication.Controllers
         {
             if(ModelState.IsValid)
             {
+                //KOSTb|L'
+                if (IsNullOrWhiteSpace(model.FName))
+                    model.FName = "Unknown";
+                if (IsNullOrWhiteSpace(model.LName))
+                    model.LName = "Unknown";
+                if (IsNullOrWhiteSpace(model.AdditionalInfo))
+                    model.AdditionalInfo = "Unknown";
+                if (IsNullOrWhiteSpace(model.DateOfBirth))
+                    model.DateOfBirth = "Unknown";
+                if (IsNullOrWhiteSpace(model.City))
+                    model.City = "Unknown";
                 EUser user = new EUser 
                     { 
                         Email = model.Email,
@@ -133,6 +150,7 @@ namespace WebApplication.Controllers
                         City = model.City,
                         AdditionalInfo = model.AdditionalInfo
                     };
+                
                 if (model.Avatar != null)
                 {
                     //using var reader = new BinaryReader(model.Avatar.OpenReadStream());

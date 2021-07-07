@@ -1,5 +1,7 @@
 ﻿@model Tuple<Entities.Entities.EBook,bool>
-
+@{
+  ViewData["Title"] = "Book's page";
+}
 <style>
 .container {
   display: grid;
@@ -68,7 +70,7 @@ width: 16rem;
                 <span class="badge badge-secondary"> @Model.Item1.LikesCount</span>
             </a>
         }
-
+        
         @if (User.Identity.Name == Model.Item1.Owner.UserName)
         {
 
@@ -76,7 +78,12 @@ width: 16rem;
            <form method="post" asp-controller="Books" asp-action="DeleteBook" asp-route-bookId="@Model.Item1.Id">
                <input type="submit" class="btn btn-outline-danger btn-sm" style="display: block" value="Remove book"/>
             </form>
-        
+            <button class="btn text-muted btn-sm" disabled style="display: block">Your own book</button>
+
+        }
+        else
+        {
+            <a class="btn btn-outline-secondary btn-sm" style="display: block" asp-controller="Account" asp-action="Index" asp-route-ownerName="@Model.Item1.Owner.UserName">Uploaded by @Model.Item1.Owner.UserName</a>
         }
 
     </div>
@@ -84,7 +91,7 @@ width: 16rem;
         <h3>Book's description</h3>
         <span style="white-space: pre-line">@Model.Item1.Description</span>
     </div>
-    <div class="owner-data text-muted">
-        Uploaded by @Model.Item1.Owner.UserName
+    <div class="owner-data">
+        
     </div>
 </div>
