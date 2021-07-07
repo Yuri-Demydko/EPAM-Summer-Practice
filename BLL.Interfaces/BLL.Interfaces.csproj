@@ -5,7 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\DTO\DTO.csproj" />
+      <ProjectReference Include="..\DataTransferObjects\DataTransferObjects.csproj" />
     </ItemGroup>
 
     <ItemGroup>

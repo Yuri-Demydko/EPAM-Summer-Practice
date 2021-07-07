@@ -1,0 +1,7 @@
+﻿{
+  "CONN":{
+    "HOME":"Server=(localdb)\\mssqllocaldb;Database=EPAM.Library.DB;Trusted_Connection=True;",
+    "WORK":"Server=(localdb)\\mssqllocaldb;Database=EPAM.Library.DB;Trusted_Connection=True;AttachDbFileName=D:\\SQL_SERVER\\EPAM.DB\\EPAM.Library.DB",
+    "AZURE":"Server=tcp:sql-server-210706122930.database.windows.net,1433; Initial Catalog=sql_210706122930_db; Persist Security Info=False; User ID=lsdamnit; Password=Demydko992233; MultipleActiveResultSets=False; Encrypt=True;TrustServerCertificate=False; Connection Timeout=30;"
+  }
+}

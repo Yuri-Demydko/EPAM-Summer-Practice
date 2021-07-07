@@ -633,7 +633,7 @@
           "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
         }
       },
-      "DTO/1.0.0": {
+      "DataTransferObjects/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
@@ -641,10 +641,10 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.7"
         },
         "compile": {
-          "bin/placeholder/DTO.dll": {}
+          "bin/placeholder/DataTransferObjects.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DTO.dll": {}
+          "bin/placeholder/DataTransferObjects.dll": {}
         }
       }
     }
@@ -1682,15 +1682,15 @@
         "version.txt"
       ]
     },
-    "DTO/1.0.0": {
+    "DataTransferObjects/1.0.0": {
       "type": "project",
-      "path": "../DTO/DTO.csproj",
-      "msbuildProject": "../DTO/DTO.csproj"
+      "path": "../DataTransferObjects/DataTransferObjects.csproj",
+      "msbuildProject": "../DataTransferObjects/DataTransferObjects.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "DTO >= 1.0.0",
+      "DataTransferObjects >= 1.0.0",
       "Microsoft.AspNetCore.Authentication >= 2.2.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.7"
     ]
@@ -1720,8 +1720,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj": {
-              "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj"
+            "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj": {
+              "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj"
             }
           }
         }

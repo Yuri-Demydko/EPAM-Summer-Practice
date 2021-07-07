@@ -18,11 +18,12 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\DAL.Interfaces\DAL.Interfaces.csproj" />
-      <ProjectReference Include="..\DTO\DTO.csproj" />
+      <ProjectReference Include="..\DataTransferObjects\DataTransferObjects.csproj" />
     </ItemGroup>
     
 </Project>

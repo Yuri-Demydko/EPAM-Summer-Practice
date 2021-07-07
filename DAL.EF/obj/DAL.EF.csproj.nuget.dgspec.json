@@ -29,8 +29,8 @@
               "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.Interfaces\\DAL.Interfaces.csproj": {
                 "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.Interfaces\\DAL.Interfaces.csproj"
               },
-              "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj": {
-                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj"
+              "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj": {
+                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj"
               }
             }
           }
@@ -72,6 +72,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.7, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             }
           },
           "imports": [
@@ -115,8 +119,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj": {
-                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj"
+              "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj": {
+                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj"
               }
             }
           }
@@ -159,14 +163,14 @@
         }
       }
     },
-    "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj": {
+    "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj",
-        "projectName": "DTO",
-        "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj",
+        "projectUniqueName": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj",
+        "projectName": "DataTransferObjects",
+        "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\obj\\",
+        "outputPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"

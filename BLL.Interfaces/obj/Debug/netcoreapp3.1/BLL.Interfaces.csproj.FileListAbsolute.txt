@@ -13,8 +13,6 @@ C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Interfaces\obj\Debug\netc
 D:\Rider\EPAM.Practice.Library.Last\BLL.Interfaces\bin\Debug\netcoreapp3.1\BLL.Interfaces.deps.json
 D:\Rider\EPAM.Practice.Library.Last\BLL.Interfaces\bin\Debug\netcoreapp3.1\BLL.Interfaces.dll
 D:\Rider\EPAM.Practice.Library.Last\BLL.Interfaces\bin\Debug\netcoreapp3.1\BLL.Interfaces.pdb
-D:\Rider\EPAM.Practice.Library.Last\BLL.Interfaces\bin\Debug\netcoreapp3.1\DTO.dll
-D:\Rider\EPAM.Practice.Library.Last\BLL.Interfaces\bin\Debug\netcoreapp3.1\DTO.pdb
 D:\Rider\EPAM.Practice.Library.Last\BLL.Interfaces\obj\Debug\netcoreapp3.1\BLL.Interfaces.csproj.AssemblyReference.cache
 D:\Rider\EPAM.Practice.Library.Last\BLL.Interfaces\obj\Debug\netcoreapp3.1\BLL.Interfaces.AssemblyInfoInputs.cache
 D:\Rider\EPAM.Practice.Library.Last\BLL.Interfaces\obj\Debug\netcoreapp3.1\BLL.Interfaces.AssemblyInfo.cs
@@ -22,3 +20,5 @@ D:\Rider\EPAM.Practice.Library.Last\BLL.Interfaces\obj\Debug\netcoreapp3.1\BLL.I
 D:\Rider\EPAM.Practice.Library.Last\BLL.Interfaces\obj\Debug\netcoreapp3.1\BLL.Interfaces.csproj.CopyComplete
 D:\Rider\EPAM.Practice.Library.Last\BLL.Interfaces\obj\Debug\netcoreapp3.1\BLL.Interfaces.dll
 D:\Rider\EPAM.Practice.Library.Last\BLL.Interfaces\obj\Debug\netcoreapp3.1\BLL.Interfaces.pdb
+D:\Rider\EPAM.Practice.Library.Last\BLL.Interfaces\bin\Debug\netcoreapp3.1\DataTransferObjects.dll
+D:\Rider\EPAM.Practice.Library.Last\BLL.Interfaces\bin\Debug\netcoreapp3.1\DataTransferObjects.pdb

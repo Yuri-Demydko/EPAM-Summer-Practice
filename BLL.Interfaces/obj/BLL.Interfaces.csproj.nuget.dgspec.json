@@ -26,8 +26,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj": {
-                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj"
+              "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj": {
+                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj"
               }
             }
           }
@@ -70,14 +70,14 @@
         }
       }
     },
-    "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj": {
+    "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj",
-        "projectName": "DTO",
-        "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\DTO.csproj",
+        "projectUniqueName": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj",
+        "projectName": "DataTransferObjects",
+        "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DTO\\obj\\",
+        "outputPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"

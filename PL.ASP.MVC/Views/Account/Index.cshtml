@@ -1,0 +1,245 @@
+﻿@model PL.ASP.MVC.Models.Account.UserProfileViewModel
+@{
+  ViewData["Title"] = "Personal Page";
+}
+<!DOCTYPE html>
+
+<html>
+<style>
+
+.InfoTextArea {
+  width: 100%;
+  height: 100%;
+  white-space: pre-wrap;
+  resize: none;
+  border: none;
+  background-color: transparent;
+  color: black;
+  padding: 0;
+}
+
+.book-card{
+margin: 10px 5px;
+-webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.47);
+-moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.47);
+box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.47);
+}
+.avatar-pic {
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  border-radius: 30%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.card-container{
+-webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+-moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+}
+
+</style>
+<head>
+    <title>User profile</title>
+</head>
+<body>
+@if (User.Identity.IsAuthenticated)
+{
+    //if not editing mode, then just show user's info and switch mode button                                    
+    @if(!Model.EditingMode)
+     {
+         <div class="container-fluid d-flex flex-column" style="margin-left: 8vw;">
+             <div class=" d-flex justify-content-between" style="margin-bottom: 3rem!important; width: 80vw!important; margin-top: 1rem!important;">
+                 <div class="d-flex flex-column p-1">
+                     <div class="">
+                         <h3>@Model.User.UserName</h3>
+                     </div>
+                     <div class="">
+                         @if (Model.User.Avatar != null && Model.User.Avatar.Length > 0)
+                         {
+                             <img src="data:image;base64,@Convert.ToBase64String(Model.User.Avatar)" class="avatar-pic" alt="Avatar"/>
+                         }
+                         else
+                         {
+                             <img src="/images/default-avatar.jpg" alt="Avatar" class="avatar-pic" style="">
+                     
+                         }
+                     </div>
+                     @if (!Model.StrangerMode){<div class=""><a class="btn btn-link btn-sm" asp-controller="Account" asp-action="Index" asp-route-editMode="true">Edit profile</a></div>}
+                 <div class="d-flex flex-column justify-content-start p-1">
+                                   <div><b>First name:</b> @Model.User.FirstName</div>
+                                  <div><b>Last name:</b> @Model.User.LastName</div>
+                                  <div><b>Date of birth:</b> @Model.User.DateOfBirth</div>
+                                  <div><b>City:</b> @Model.User.City</div>
+                              </div>
+                     </div>
+                 <div class="p-1" style="width: 40vw">
+                     @if (Model.StrangerMode)
+                     {<h5>Additional info about @Model.User.UserName</h5>}
+                     else
+                     {<h5>Your additional info</h5>}
+                     <textarea disabled class="InfoTextArea" style="overflow: auto"> @Model.User.AdditionalInfo</textarea>
+                 </div>
+             </div>
+             <div class="p-1 mb-2">
+                                  @if (Model.StrangerMode)
+                                  {<h3>@Model.User.UserName's own books</h3>}
+                                  else
+                                  {<h3>Your own books</h3>}
+                                  @if(Model.User.OwnBooks!=null && Model.User.OwnBooks.Count>0)
+                                  {
+                                      <div class="card card-container" style="max-width: 80vw;overflow: auto; border: 5px solid #007bff;
+    background: rgb(0,123,255);
+background: linear-gradient(0deg, rgba(0,123,255,1) 0%, rgba(255,255,255,1) 36%);">
+                                          <div class="row flex-nowrap" style="padding-left: 30px; padding-right: 30px">
+                                              @foreach (var book in Model.User.OwnBooks)
+                                              {
+                                                  <div class="book-card card text-white bg-dark mb-3 text-center" style="width: 13rem; height: 18rem;  min-width: 13rem; min-height: 18rem; display: inline-block; border: none; @book.CardBg">
+                                                      <div class="card-header">
+                                                          @book.Author
+                                                      </div>
+                                                      <div class="card-body">
+                                                          <h4 class="card-title">@book.Title</h4>
+                                                          <h5 class="card-subtitle">@book.Genre</h5>
+                                                          <p class="card-text" style="font-size: small">
+                                                          </p>
+                                                          <a asp-controller="Books" asp-action="BookPage" asp-route-Id="@book.Id" class="badge badge-light" style="position:absolute; left: 5%; bottom: 5%;">View</a>
+                                                          <span class="badge badge-success" style="position:absolute; right: 5%; bottom: 5%;">Likes: @book.LikesCount</span>
+                                                      </div>
+                                                  </div>
+                                              }
+                                          </div>
+                                      </div>
+                                  }
+                                  else
+                                  {
+                                      string who = "you haven't";
+                                      if (Model.StrangerMode)
+                                          who = Model.User.UserName+" hasn't";
+                                      <div class="jumbotron jumbotron-fluid" style="width: 40vw">
+                                          <div class="container">
+                                              <h1 class="display-4">Empty</h1>
+                                              <p class="lead">Looks like @who any own books :\</p>
+                                          </div>
+                                      </div>
+                                  }
+                 </div>
+             <div class="p-1">
+                                   @if (Model.StrangerMode)
+                                   {<h3>@Model.User.UserName's favorite books</h3>}
+                                   else
+                                   {<h3>Your favorite books</h3>}
+                                   @if(Model.FavoriteBooks!=null && Model.FavoriteBooks.Count>0)
+                                   {
+                                       <div class="card card-container" style="max-width: 80vw;overflow: auto; border: 5px solid #28a745;background: rgb(40,167,69);
+                                    background: linear-gradient(0deg, rgba(40,167,69,1) 0%, rgba(255,255,255,1) 36%);">
+                                           <div class="row flex-nowrap" style="padding-left: 30px; padding-right: 30px">
+                                               @foreach (var book in Model.FavoriteBooks)
+                                               {
+                                                   <div class="book-card card text-white bg-dark mb-3 text-center" style="width: 13rem; height: 18rem;  min-width: 13rem; min-height: 18rem; display: inline-block; border: none; @book.CardBg">
+                                                       <div class="card-header">
+                                                           @book.Author
+                                                       </div>
+                                                       <div class="card-body">
+                                                           <h4 class="card-title">@book.Title</h4>
+                                                           <h5 class="card-subtitle">@book.Genre</h5>
+                                                           <p class="card-text" style="font-size: small">
+                                                           </p>
+                                                           <a asp-controller="Books" asp-action="BookPage" asp-route-Id="@book.Id" class="badge badge-light" style="position:absolute; left: 5%; bottom: 5%;">View</a>
+                                                           <span class="badge badge-success" style="position:absolute; right: 5%; bottom: 5%;">Likes: @book.LikesCount</span>
+                                                       </div>
+                                                   </div>
+                                               }
+                                           </div>
+                                       </div>
+                                   }
+                                   else
+                                   {
+                                       string who = "you haven't";
+                                       if (Model.StrangerMode)
+                                           who = Model.User.UserName+" hasn't";
+                                       <div class="jumbotron jumbotron-fluid" style="width: 40vw">
+                                           <div class="container">
+                                               <h1 class="display-4">Empty</h1>
+                                               <p class="lead">Looks like @who any favorite books :\</p>
+                                               </div>
+                                           </div>
+                                   }
+                              </div>
+         </div>
+     }
+    else
+    {
+        <form method="post" style="width:80vw;margin: 1rem auto;" asp-controller="Account" asp-action="EditProfile" enctype="multipart/form-data" style="width:90%; height: 90%">
+            <h2>Account editing</h2>
+            @*<input type="hidden"value="@Model.User" asp-for="User"/>*@
+            <div asp-validation-summary="All"></div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Email">Email</label>
+                    <input type="email" readonly asp-for="Email" class="form-control" value="@Model.Email" placeholder="Email">
+                    <span asp-validation-for="Email"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Username">Username</label>
+                    <input asp-for="Username" readonly type="text" class="form-control" value="@Model.Username" placeholder="JohnyAppleseed">
+                    <span asp-validation-for="Username"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Password">New password</label>
+                    <input type="password" asp-for="Password" class="form-control" placeholder="Password">
+                    <span asp-validation-for="Password"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="PasswordConfirm">Confirm new password</label>
+                    <input type="password" asp-for="PasswordConfirm" class="form-control" placeholder="Password">
+                    <span asp-validation-for="PasswordConfirm"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewAvatar">Profile photo</label>
+                <input type="file" accept=".png, .jpg, .jpeg" asp-for="NewAvatar" class="form-control"/>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="FName">First name</label>
+                    <input type="text" asp-for="FName" class="form-control" placeholder="Bob">
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="LName">Last name</label>
+                    <input asp-for="LName" type="text" class="form-control" placeholder="Dylan">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="DateOfBirth">Date of birth</label>
+                    <input type="date" class="form-control" asp-for="DateOfBirth"/>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="City">City</label>
+                    <input type="text" asp-for="City" class="form-control" placeholder="Saratov"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdditionalInfo">Additional info</label>
+                <textarea class="form-control" asp-for="AdditionalInfo">@Model.User.AdditionalInfo</textarea>
+            </div>
+            <div class="form-group">
+                            <label asp-for="OldPassword"><b>Enter your Current password to commit changes</b></label>
+                <input type="password" class="form-control" asp-for="OldPassword" placeholder="Current password"/>
+                </div>
+            <div>
+                <input class="btn btn-primary btn-block" type="submit" value="Save changes"/>
+            </div>
+        </form>
+    }
+   
+}
+else
+{
+    <h3>Please login to get access to this page</h3>
+}
+</body>
+</html>
