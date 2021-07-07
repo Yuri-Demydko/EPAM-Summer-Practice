@@ -54,8 +54,8 @@ namespace DAL.EF
                     Owner = adm,
                     CardBg = gradients[new Random().Next(7)],
                     Description =
-                        "Hi! It is an example book page. Unfortunately it doesn't attached to a PDF file. So, you aren't able to read it. But don't worry, you still can" +
-                        "find here some real books uploaded by real users and/or upload some by yourself.\n\nOh, and if you have nothing to do, you can try to collect all" +
+                        "Hi! It is an example book page. Unfortunately it doesn't attached to a PDF file. So, you aren't able to read it. But don't worry, you still can " +
+                        "find here some real books uploaded by real users and/or upload some by yourself.\n\nOh, and if you have nothing to do, you can try to collect all " +
                         "70 parts of that \"book\" in you favorites (of course you won't do it)."
                 };
                  _context.Books.Add(book);

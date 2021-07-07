@@ -19,7 +19,7 @@ namespace DAL.EF.Migrations
                 .HasAnnotation("ProductVersion", "5.0.7")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("DataTransferObjects.Entities.EBook", b =>
+            modelBuilder.Entity("Entities.Entities.EBook", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -57,7 +57,7 @@ namespace DAL.EF.Migrations
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("DataTransferObjects.Entities.EFavoriteBooksToUsers", b =>
+            modelBuilder.Entity("Entities.Entities.EFavoriteBooksToUsers", b =>
                 {
                     b.Property<int>("BookId")
                         .HasColumnType("int");
@@ -70,7 +70,40 @@ namespace DAL.EF.Migrations
                     b.ToTable("FavoriteBooksToUsers");
                 });
 
-            modelBuilder.Entity("DataTransferObjects.Entities.EUser", b =>
+            modelBuilder.Entity("Entities.Entities.ELog", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Exception")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Level")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LogEvent")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MessageTemplate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Properties")
+                        .HasColumnType("Xml");
+
+                    b.Property<DateTime>("TimeStamp")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Logs");
+                });
+
+            modelBuilder.Entity("Entities.Entities.EUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -284,9 +317,9 @@ namespace DAL.EF.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("DataTransferObjects.Entities.EBook", b =>
+            modelBuilder.Entity("Entities.Entities.EBook", b =>
                 {
-                    b.HasOne("DataTransferObjects.Entities.EUser", "Owner")
+                    b.HasOne("Entities.Entities.EUser", "Owner")
                         .WithMany("OwnBooks")
                         .HasForeignKey("OwnerId");
 
@@ -304,7 +337,7 @@ namespace DAL.EF.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("DataTransferObjects.Entities.EUser", null)
+                    b.HasOne("Entities.Entities.EUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -313,7 +346,7 @@ namespace DAL.EF.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("DataTransferObjects.Entities.EUser", null)
+                    b.HasOne("Entities.Entities.EUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -328,7 +361,7 @@ namespace DAL.EF.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DataTransferObjects.Entities.EUser", null)
+                    b.HasOne("Entities.Entities.EUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -337,14 +370,14 @@ namespace DAL.EF.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("DataTransferObjects.Entities.EUser", null)
+                    b.HasOne("Entities.Entities.EUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DataTransferObjects.Entities.EUser", b =>
+            modelBuilder.Entity("Entities.Entities.EUser", b =>
                 {
                     b.Navigation("OwnBooks");
                 });

@@ -35,6 +35,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+  justify-content: space-evenly;
 }
 </style>
 @*<h3>Welcome to Pro-Ultra-Super-Dooper E-Library</h3>*@
@@ -42,13 +43,13 @@ body {
 @*---------------Search field-------------*@
 <form style="margin-left:15px; margin-right: 15px" method="post" asp-controller="Home" asp-action="SearchForBooks">
   <div class="form-row">
-    <div class="col-10">
-      <input type="text" style="margin-bottom: 5px; background: linear-gradient(45deg, #3333,transparent)" asp-for="SearchString" class="form-control" placeholder="Find book what you need"/>
+    <div class="">
+      <input type="text" style="margin-bottom: 5px;width: 60vw; margin-right: 1vw; background: linear-gradient(45deg, #3333,transparent)" asp-for="SearchString" class="form-control" placeholder="Find book what you need"/>
     </div>
-    <div class="col">
+    <div class="">
       <div class="btn-group" role="group">
-        <button type="submit" class="btn btn-outline-success">Search</button>
-        <a class="btn btn-outline-danger" asp-action="Index" asp-controller="Home">Reset</a>
+        <button type="submit" style="width: 8.5vw" class="btn btn-outline-success">Search</button>
+        <a class="btn btn-outline-danger" style="width: 8.5vw" asp-action="Index" asp-controller="Home">Reset</a>
       </div>
     </div>
     </div>

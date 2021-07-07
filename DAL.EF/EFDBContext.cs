@@ -10,11 +10,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.EF 
 {
-    public sealed class EFDBContext : IdentityDbContext<EUser>
+    public class EFDBContext : IdentityDbContext<EUser>
     {
         public DbSet<EUser> Users { get; set; }
         public DbSet<EBook> Books { get; set; }
         public DbSet<EFavoriteBooksToUsers> FavoriteBooksToUsers { get; set; }
+        public virtual  DbSet<ELog> Logs { get; set; }
 
 
         public EFDBContext() : base()
@@ -30,8 +31,8 @@ namespace DAL.EF
             try
             {
                 //CONN_CONFIG.json added to .gitignore. Use your own connection string!
-                var parsedJobj = JObject.Parse(File.ReadAllText(@"..\DAL.EF\CONN_CONFIG.json"));
-                conn = parsedJobj["CONN"]["WORK"].ToString();
+                var parsedObj = JObject.Parse(File.ReadAllText(@"..\DAL.EF\CONN_CONFIG.json"));
+                conn = parsedObj["CONN"]?["HOME"]?.ToString();
                 
             }
             catch (Exception e)
@@ -50,6 +51,8 @@ namespace DAL.EF
             modelBuilder.Entity<EUser>()
                 .HasMany(u => u.OwnBooks)
                 .WithOne(b => b.Owner);
+            
+            modelBuilder.Entity<ELog>().ToTable("Logs");
         }
         
         

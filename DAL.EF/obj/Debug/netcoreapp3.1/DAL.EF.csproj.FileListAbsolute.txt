@@ -8,9 +8,7 @@ C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.EF\bin\Debug\netcoreapp3.
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.EF\bin\Debug\netcoreapp3.1\DAL.EF.dll
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.EF\bin\Debug\netcoreapp3.1\DAL.EF.pdb
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.EF\bin\Debug\netcoreapp3.1\DAL.Interfaces.dll
-C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.EF\bin\Debug\netcoreapp3.1\DTO.dll
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.EF\bin\Debug\netcoreapp3.1\DAL.Interfaces.pdb
-C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.EF\bin\Debug\netcoreapp3.1\DTO.pdb
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.EF\obj\Debug\netcoreapp3.1\DAL.EF.csproj.CopyComplete
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.EF\obj\Debug\netcoreapp3.1\DAL.EF.dll
 C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.EF\obj\Debug\netcoreapp3.1\DAL.EF.pdb
@@ -32,3 +30,5 @@ D:\Rider\EPAM.Practice.Library.Last\DAL.EF\obj\Debug\netcoreapp3.1\DAL.EF.pdb
 D:\Rider\EPAM.Practice.Library.Last\DAL.EF\obj\Debug\netcoreapp3.1\DAL.EF.genruntimeconfig.cache
 D:\Rider\EPAM.Practice.Library.Last\DAL.EF\bin\Debug\netcoreapp3.1\DataTransferObjects.dll
 D:\Rider\EPAM.Practice.Library.Last\DAL.EF\bin\Debug\netcoreapp3.1\DataTransferObjects.pdb
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.EF\bin\Debug\netcoreapp3.1\DataTransferObjects.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.EF\bin\Debug\netcoreapp3.1\DataTransferObjects.pdb

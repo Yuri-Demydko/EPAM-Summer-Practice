@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-x:hidden">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -18,7 +18,7 @@
 <body>
 <header>
     <nav id="navbar" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><b style="word-break: keep-all;">Y-Library</b></a>
+        <a class="navbar-brand text-nowrap" asp-area="" asp-controller="Home" asp-action="Index"><b style="word-break: keep-all;">Y-Library</b></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -73,8 +73,13 @@
     </main>
 </div>
 
-<footer class="border-top footer text-muted">
+<footer class="border-top footer text-muted bg-white box-shadow">
     <div class="container-fluid">
+        <div class="d-flex justify-content-center">
+            <div class="flex-item">
+                <span><b style="word-break: keep-all;">Y-Library</b></span>
+            </div>
+        </div>
     </div>
 </footer>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
