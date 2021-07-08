@@ -200,7 +200,7 @@ background: linear-gradient(0deg, rgba(0,123,255,1) 0%, rgba(255,255,255,1) 36%)
             </div>
             <div class="form-group">
                 <label asp-for="NewAvatar">Profile photo</label>
-                <input type="file" accept=".png, .jpg, .jpeg" asp-for="NewAvatar" class="form-control"/>
+                <input type="file" id="file" accept=".png, .jpg, .jpeg" asp-for="NewAvatar" class="form-control"/>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
@@ -227,13 +227,23 @@ background: linear-gradient(0deg, rgba(0,123,255,1) 0%, rgba(255,255,255,1) 36%)
                 <textarea class="form-control" asp-for="AdditionalInfo">@Model.User.AdditionalInfo</textarea>
             </div>
             <div class="form-group">
-                            <label asp-for="OldPassword"><b>Enter your Current password to commit changes</b></label>
+                <label asp-for="OldPassword"><b>Enter your Current password to commit changes</b></label>
                 <input type="password" class="form-control" asp-for="OldPassword" placeholder="Current password"/>
-                </div>
+            </div>
             <div>
                 <input class="btn btn-primary btn-block" type="submit" value="Save changes"/>
             </div>
         </form>
+        <script>
+        var uploadField = document.getElementById("file");
+        
+        uploadField.onchange = function() {
+            if(this.files[0].size > 2097152){
+               alert("Photo is too big! Maximum is 2Mb!");
+               this.value = "";
+            };
+        };
+        </script>
     }
    
 }

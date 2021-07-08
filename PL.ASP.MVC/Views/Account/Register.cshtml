@@ -51,7 +51,7 @@
         </div>
     </div>
     <div class="form-group">
-        <label asp-for="Avatar">Profile photo</label>
+        <label asp-for="Avatar" id="file">Profile photo</label>
         <input type="file" asp-for="Avatar" accept=".png, .jpg, .jpeg" class="form-control"/>
     </div>
     <div>
@@ -62,3 +62,13 @@
         <input class="btn btn-primary btn-block" type="submit" value="Регистрация"/>
     </div>
 </form>
+<script>
+        var uploadField = document.getElementById("file");
+        
+        uploadField.onchange = function() {
+            if(this.files[0].size > 2097152){
+               alert("Photo is too big! Maximum is 2Mb!");
+               this.value = "";
+            };
+        };
+        </script>

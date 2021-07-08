@@ -107,6 +107,12 @@ namespace PL.ASP.MVC.Controllers
                 Genre = model.Genre,
                 CardBg = GetRandomBg()
             };
+            if(!model.BookFile.FileName.EndsWith(".pdf"))
+            {
+                ModelState.AddModelError("err", "Book must have .pdf format and size less than 10 MB!");
+                return View(model);
+            }
+            
             using var reader = new BinaryReader(model.BookFile.OpenReadStream());
             book.Data = reader.ReadBytes((int)model.BookFile.Length);
             await _booksBooksBlo.UploadBook(book, User.Identity.Name);

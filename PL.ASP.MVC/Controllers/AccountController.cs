@@ -52,6 +52,12 @@ namespace PL.ASP.MVC.Controllers
 
                 if (model.NewAvatar != null)
                 {
+                    if((!model.NewAvatar.FileName.EndsWith(".jpg")&&!model.NewAvatar.FileName.EndsWith(".jpeg")&&!model.NewAvatar.FileName.EndsWith(".png")))
+                    {
+                        ModelState.AddModelError("err", "Photo must have .jpg/jpeg/png format and size less than 10 MB!");
+                        return RedirectToAction("Index", new {editMode = true, errModel = model});
+                    }
+                    
                     model.User.Avatar = CompressAvatar(model.NewAvatar);
                 }
 
