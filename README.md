@@ -1,3 +1,4 @@
 # EPAM-Summer-Practice
 
-## Maybe here will be fine E-Library web app, but who knows
+## Finaly, I did it
+epam-practice-library.azurewebsites.net <-check, if wanna test features
