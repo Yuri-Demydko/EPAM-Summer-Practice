@@ -24,7 +24,7 @@ namespace PL.ASP.MVC.Controllers
         
         public async Task<IActionResult> BookPage(string id)
         {
-            var book = await _booksBooksBlo.GetBookById(id,false);
+            var book = await _booksBooksBlo.GetBookById(id,true);
             var model = new Tuple<EBook, bool>(book, await _usersBlo.CheckBookInFavoritesOfUser(book, User.Identity.Name));
 
             return View(model);

@@ -32,12 +32,13 @@ namespace DAL.EF
             {
                 //CONN_CONFIG.json added to .gitignore. Use your own connection string!
                 var parsedObj = JObject.Parse(File.ReadAllText(@"..\DAL.EF\CONN_CONFIG.json"));
-                conn = parsedObj["CONN"]?["HOME"]?.ToString();
+                conn = parsedObj["CONN"]?["AZURE"]?.ToString();
                 
             }
             catch (Exception e)
             {
-                throw new Exception("USE YOUR OWN DH CONNECTION STRING!");
+                conn="Server=tcp:epam-practice-sql-server.database.windows.net,1433; Initial Catalog=EPAM.Library.DB.Azurev4; Persist Security Info=False; User ID=___; Password=___; MultipleActiveResultSets=False; Encrypt=True;TrustServerCertificate=False; Connection Timeout=30;";
+                //throw new Exception("USE YOUR OWN DH CONNECTION STRING!");
             }
             optionsBuilder
                 .UseSqlServer(conn);

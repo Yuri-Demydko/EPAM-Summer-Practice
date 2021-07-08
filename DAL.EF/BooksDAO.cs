@@ -88,13 +88,17 @@ namespace DAL.EF
         {
             if (updatedBook == null)
                 throw new ArgumentException("Book parameter can't be null");
-            var oldBook =await GetBookById(updatedBook.Id.ToString(), true);
+            
+            await _context.Database.ExecuteSqlRawAsync("update [dbo].[Books]" +
+                                                       $"set Title='{updatedBook.Title}', Author='{updatedBook.Author}', Genre='{updatedBook.Genre}', Description='{updatedBook.Description}'" +
+                                                       $"where Id={updatedBook.Id}");
+            /*var oldBook =await GetBookById(updatedBook.Id.ToString(), true);
             if(oldBook.Data!=null && oldBook.Data.Any())
             {
                 updatedBook.Data = new byte[oldBook.Data.Length];
                 oldBook.Data.CopyTo(updatedBook.Data, 0);
             }
-            _context.Update(updatedBook);
+            _context.Update(updatedBook);*/
             await _context.SaveChangesAsync();
         }
         public async Task<EBook> GetBookById(string id,bool includeHeavyData=true)

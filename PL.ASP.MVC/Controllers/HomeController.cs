@@ -10,7 +10,7 @@ using PL.ASP.MVC.Models.Books;
 
 namespace PL.ASP.MVC.Controllers
 {
-    [Authorize]
+    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -24,6 +24,7 @@ namespace PL.ASP.MVC.Controllers
             _techBlo = techBlo;
         }
         
+        [Authorize]
         public async Task<IActionResult> Index(int pageNum=0,string searchString="",byte searchMode=0)
         {
             var model = new BooksGalleryViewModel
@@ -55,6 +56,7 @@ namespace PL.ASP.MVC.Controllers
             await _techBlo.PrefillDatabaseWithTestDataAsync();
             return View();
         }
+        [Authorize]
         [HttpPost]
         public IActionResult SearchForBooks(BooksGalleryViewModel model)
         {
