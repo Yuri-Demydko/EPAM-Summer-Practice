@@ -1676,26 +1676,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\yurid\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DataTransferObjects\\DataTransferObjects.csproj",
+      "projectUniqueName": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj",
       "projectName": "DataTransferObjects",
-      "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DataTransferObjects\\DataTransferObjects.csproj",
-      "packagesPath": "C:\\Users\\yurid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DataTransferObjects\\obj\\",
+      "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\yurid\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1738,7 +1736,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

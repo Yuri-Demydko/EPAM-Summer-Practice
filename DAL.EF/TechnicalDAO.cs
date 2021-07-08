@@ -7,7 +7,6 @@ using Entities.Entities;
 
 namespace DAL.EF
 {
-
     public class TechnicalDAO:ITechDAO
     {
         private readonly EFDBContext _context;
@@ -18,10 +17,9 @@ namespace DAL.EF
             _context = context;
             _usersDao = usersDao;
         }
-        
         public async Task PrefillDatabaseWithTestDataAsync()
         {
-            if (_context.Users.Any())
+            if (_context.Users.Any()||_context.Books.Any())
               return;
             EUser adm = new EUser()
             {

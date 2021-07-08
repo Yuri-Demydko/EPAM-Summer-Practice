@@ -32,7 +32,7 @@ namespace PL.ASP.MVC.Controllers
                 
             if (ModelState.IsValid)
             {
-                var user= await  _usersBlo.GetUserByUserNameAsync(User.Identity.Name,true);
+                var user=  await _usersBlo.GetUserByUserNameAsync(User.Identity.Name,true);
                 model.User = user;
                 if (IsNullOrWhiteSpace(model.FName))
                     model.FName = "Unknown";
@@ -76,7 +76,7 @@ namespace PL.ASP.MVC.Controllers
         {
             using var reader = new BinaryReader(avatar.OpenReadStream());
             byte[] byteArr = reader.ReadBytes((int)avatar.Length);
-            var jpegQuality = 50;
+            var jpegQuality = 40;
             using var inputStream = new MemoryStream(byteArr);
             var image = Image.FromStream(inputStream);
             var jpegEncoder = ImageCodecInfo.GetImageDecoders() 

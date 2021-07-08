@@ -42,12 +42,22 @@ namespace DAL.EF
                     EUser user;
                     if(includeHeavyData)
                     {
-                         user = (await (from u
-                                in _context.Users
-                                    //.Include(u => u.OwnBooks)
-                            // .Include(u=>u.Avatar)
-                            where u.UserName == username
-                            select u).FirstOrDefaultAsync());
+                        user =  await _context.Users
+                            .Where(u => u.UserName == username)
+                            .Select(u => new EUser()
+                            {
+                                Id=u.Id,
+                                FirstName = u.FirstName,
+                                LastName = u.LastName,
+                                City = u.City,
+                                DateOfBirth = u.DateOfBirth,
+                                AdditionalInfo = u.AdditionalInfo,
+                                Avatar = u.Avatar,
+                                OwnBooks = u.OwnBooks,
+                                UserName = u.UserName,
+                                Email = u.Email,
+                            }).AsNoTracking().FirstOrDefaultAsync();
+                         
                          user.OwnBooks = await _context.Books
                              .Where(b => b.Owner.Id == user.Id)
                              .Select(b => new EBook()
@@ -58,7 +68,8 @@ namespace DAL.EF
                                  Genre = b.Genre,
                                  LikesCount = b.LikesCount,
                                  CardBg = b.CardBg,
-                             }).ToListAsync();
+                                 
+                             }).AsNoTracking().ToListAsync();
                     }
                     else
                     {
@@ -74,7 +85,7 @@ namespace DAL.EF
                                 //AdditionalInfo = u.AdditionalInfo,
                                 UserName = u.UserName,
                                 Email = u.Email
-                            }).FirstOrDefaultAsync();
+                            }).AsNoTracking().FirstOrDefaultAsync();
                     }
                     return user ?? throw new ArgumentException("User with that username not exists");
                 }
@@ -90,7 +101,22 @@ namespace DAL.EF
                 {
                     if (user == null)
                         throw new ArgumentNullException("User can't be null");
-                    await _userManager.UpdateAsync(user);
+                    /*await _context.Database.ExecuteSqlRawAsync("update [dbo].[AspNetUsers] " +
+                                                               $"set FirstName=N'{user.FirstName}', LastName=N'{user.LastName}', City=N'{user.City}', DateOfBirth='{user.DateOfBirth}', AdditionalInfo=N'{user.AdditionalInfo}', Avatar='{ava}'" +
+                                                               $" where Id='{user.Id}'");*/
+                    
+                    // $"Avatar='{user.Avatar}',  "+
+                    //_context.ChangeTracker.Clear();
+                    var userU = _context.Users.First(u => u.Id == user.Id);
+                    userU.FirstName = user.FirstName;
+                    userU.LastName = user.LastName;
+                    userU.Avatar = user.Avatar;
+                    userU.City = user.City;
+                    userU.AdditionalInfo = user.AdditionalInfo;
+                    userU.DateOfBirth = user.DateOfBirth;
+                    //userU.OwnBooks = user.OwnBooks;
+                    
+                    await _userManager.UpdateAsync(userU);
                     await _context.SaveChangesAsync();
                     return true;
                 }

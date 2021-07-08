@@ -28,7 +28,7 @@
     <div>
         <div class="form-group">
             <label asp-for="Description">Describe that book</label>
-            <textarea class="form-control" asp-for="Description">@Model.Description</textarea>
+            <textarea class="form-control" maxlength="600" asp-for="Description">@Model.Description</textarea>
         </div>
         <input class="btn btn-primary btn-block" type="submit" value="Save"/>
     </div>

@@ -15,5 +15,6 @@ namespace DAL.Interfaces
         public Task EditBookData(EBook updatedBook);
         public Task DeleteBook(string bookId);
         public Task<IList<EBook>> GetFilteredBooksGallery(Tuple<string,byte> searchParameters);
+        public  Task<bool> CheckBookData(string id);
     }
 }

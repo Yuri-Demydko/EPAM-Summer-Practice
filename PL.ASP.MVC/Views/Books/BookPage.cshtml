@@ -1,4 +1,4 @@
-﻿@model Tuple<Entities.Entities.EBook,bool>
+﻿@model Tuple<Entities.Entities.EBook,bool,bool>
 @{
   ViewData["Title"] = "Book's page";
 }
@@ -55,7 +55,7 @@ width: 16rem;
     </div>
     <div class="controls">
 
-        @if(Model.Item1.Data!=null && Model.Item1.Data.Length>0)
+        @if(Model.Item3)
         {
             <a class="btn btn-primary btn-lg" style="display: block" asp-controller="Books" asp-action="ReadBook" asp-route-id="@Model.Item1.Id">Read book</a>
         }
@@ -94,7 +94,7 @@ width: 16rem;
     </div>
     <div class="description">
         <h3>Book's description</h3>
-        <span style="white-space: pre-line">@Model.Item1.Description</span>
+        <span style="white-space: pre-line" >@Model.Item1.Description</span>
     </div>
     <div class="owner-data">
         

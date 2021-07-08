@@ -16,8 +16,6 @@ namespace DAL.EF
         public DbSet<EBook> Books { get; set; }
         public DbSet<EFavoriteBooksToUsers> FavoriteBooksToUsers { get; set; }
         public virtual  DbSet<ELog> Logs { get; set; }
-
-
         public EFDBContext() : base()
         {
             Database.EnsureCreated();
@@ -37,7 +35,7 @@ namespace DAL.EF
             }
             catch (Exception e)
             {
-                conn="Server=tcp:epam-practice-sql-server.database.windows.net,1433; Initial Catalog=EPAM.Library.DB.Azurev4; Persist Security Info=False; User ID=___; Password=___; MultipleActiveResultSets=False; Encrypt=True;TrustServerCertificate=False; Connection Timeout=30;";
+                conn="Server=tcp:epam-practice-sql-server.database.windows.net,1433; Initial Catalog=EPAM.Library.DB.Azurev4; Persist Security Info=False; User ID=[HIDDEN]; Password=[HIDDEN]; MultipleActiveResultSets=False; Encrypt=True;TrustServerCertificate=False; Connection Timeout=30;";
                 //throw new Exception("USE YOUR OWN DH CONNECTION STRING!");
             }
             optionsBuilder

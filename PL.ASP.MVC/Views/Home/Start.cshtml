@@ -48,7 +48,7 @@ font-size: xxx-large!important;
         partOfTextEN = "I see, you are signed in. So, now you can test that library's features.  Let's start from ";
     }
 }
-<div class="jumbotron jumbotron-fluid" style="height: fit-content"  name="top">
+<div  class="jumbotron jumbotron-fluid" style="height: fit-content"  name="top">
     <div class="container">
         <h1 class="display-2">Welcome to Y-Library <span class="badge badge-primary">EN</span></h1>
         <p class="lead">This is a simple E-Library project developed by Yuri Demydko as EPAM summer practice project. @partOfTextEN <a asp-controller="@controller" asp-action="@action">@linkTextEN</a>.
@@ -166,44 +166,41 @@ font-size: xxx-large!important;
         </div>
     </div>
 </div>
-<div class="container">
+<div  id="totop" class="container" style="margin-top:30vh ">
     <div class="row">
         <div class="col"><hr>
         </div>
-        <div class="col" style="margin-top: 2vh">
+        <div class="col" style="">
             <div class="btn-group" role="group" style="width:100%" aria-label="Basic example">
-                <button class="btn btn-outline-secondary btn-sm" onclick="fOut()">To the top</button>
-                <button class="btn btn-outline-secondary btn-sm" onclick="fOut()">Наверх</button>
+                <button class="btn btn-outline-secondary btn-sm" onclick="scrollToTop()">To the top</button>
+                <button class="btn btn-outline-secondary btn-sm" onclick="scrollToTop()">Наверх</button>
             </div>
         </div>
         <div class="col"><hr></div>
     </div>
 </div>
 <script>
-$(document).scroll(function ()
-                       {
-                           $("#funcs").fadeIn(500,function (){
-                               $("#techs").fadeIn(500,function ()
-                               {
-                                   $("#facts").fadeIn(500,function ()
-                                   {
-                                       //end
-                                   });
-                           });
-                           });
-                        });
-function fOut () 
-                       {
-                           $("html, body").animate({ scrollTop: 0 }, 250);
-                           $("#funcs").fadeOut(200,function (){
-                               $("#techs").fadeOut(200,function ()
-                               {
-                                   $("#facts").fadeOut(200,function ()
-                                   {
-                                       //end
-                                   });
-                           });
-                           });
-                        }
-    
+//fOut();
+$ ( document ).scroll (fIn);
+function fIn () {
+    $ ( "#totop" ).css ( "margin-top", "auto" );
+    $ ( "#funcs" ).fadeIn ( 500, function () {
+
+        $ ( "#techs" ).fadeIn ( 500, function () {
+            $ ( "#facts" ).fadeIn ( 500, function () {
+               // document.removeEventListener('scroll', fIn);
+            } );
+        } );
+    } );
+}
+
+//fOut();
+
+function scrollToTop()
+{
+     $("html, body").animate({ scrollTop: 0 }, 250);}
+                       
+                             
+                            
+   
 </script>

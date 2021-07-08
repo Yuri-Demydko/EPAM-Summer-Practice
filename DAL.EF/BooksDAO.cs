@@ -4,12 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Entities.Entities;
 using DAL.Interfaces;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using NaturalSort.Extension;
 
 namespace DAL.EF
 {
-    public class BooksDAO : Interfaces.IBooksDAO
+    public class BooksDAO : IBooksDAO
     {
         private readonly EFDBContext _context;
         private readonly IUsersDAO _usersDao;
@@ -19,51 +19,20 @@ namespace DAL.EF
             _context = context;
             _usersDao = usersDao;
         }
-        
-        //TECH METHOD
-        //REMOVE BEFORE PUBLISHING
-        private void PrefillDatabaseWithTestData()
+        public async Task<bool> CheckBookData(string id)
         {
-            EUser adm = new EUser()
+            try
             {
-                UserName = "ADMIN",
-                Email = "admin@admin-mail.com",
-                FirstName = "Bob",
-                LastName = "Charlie",
-                DateOfBirth = "01-01-1970",
-                City = "St. Petersburg",
-                AdditionalInfo = "Ultimate first user in that f*cking swamp!\n FEAR ME!"
-            };
-             _usersDao.AddUserAsync(adm, "Admin0101_");
-            IList<string> _gradients = new List<string>()
-            {
-                "background: rgb(59,34,0); background: linear-gradient(180deg, rgba(59,34,0,1) 0%, rgba(163,96,3,1) 100%);",
-                "background: rgb(2,0,36); background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(123,149,154,1) 100%)",
-                "background: rgb(3,51,3); background: linear-gradient(180deg, rgba(3,51,3,1) 0%, rgba(0,166,0,1) 100%);",
-                "background: rgb(51,3,3); background: linear-gradient(180deg, rgba(51,3,3,1) 0%, rgba(166,0,0,1) 100%);",
-                "background: rgb(6,39,74); background: linear-gradient(180deg, rgba(6,39,74,1) 0%, rgba(132,119,255,1) 100%);",
-                "background: rgb(0,72,85); background: linear-gradient(180deg, rgba(0,72,85,1) 0%, rgba(17,93,0,1) 100%);",
-                "background: rgb(77,0,85); background: linear-gradient(180deg, rgba(77,0,85,1) 0%, rgba(87,21,21,1) 100%);",
-            };
-            for (int i = 0; i < 20; i++)
-            {
-                EBook book = new EBook()
-                {
-                    Author = "Bob Charlie",
-                    Title = $"How to prefill a database. Part №{i}",
-                    Genre = "Tutorial",
-                    Owner = adm,
-                    CardBg = _gradients[new Random().Next(4)],
-                    Description =
-                        "Entity Framework is an open-source ORM framework for .NET applications supported by Microsoft. It enables developers to work with data using objects of domain specific classes without focusing on the underlying database tables and columns where this data is stored. With the Entity Framework, developers can work at a higher level of abstraction when they deal with data, and can create and maintain data-oriented applications with less code compared with traditional applications." +
-                        "\nOfficial Definition: “Entity Framework is an object-relational mapper (O/RM) that enables .NET developers to work with a database using .NET objects. It eliminates the need for most of the data-access code that developers usually need to write.”"
-                };
-                 _context.Books.Add(book);
+                var res1 = await _context.Books
+                    .Where(b => b.Id.ToString() == id && (b.Data == null || b.Data.Length == 0))
+                    .FirstAsync();
             }
-            _context.SaveChanges();
+            catch (Exception)
+            {
+                return true;
+            }
+            return false;
         }
-        //------
-        
         public async Task DeleteBook(string bookId)
         {
             var book = await GetBookById(bookId,false);
@@ -79,8 +48,9 @@ namespace DAL.EF
             var user = await _usersDao.GetUserByUserNameAsync(ownerUserName);
             await _context.Books.AddAsync(book);
            await _context.SaveChangesAsync();
+          
            await _context.Database.ExecuteSqlRawAsync("update [dbo].[Books]" +
-                                                      $"set OwnerId='{user.Id}'" +
+                                                      $"set OwnerId='{user.Id}' " +
                                                       $"where Id={book.Id}");
            await _context.SaveChangesAsync();
         }
@@ -89,16 +59,9 @@ namespace DAL.EF
             if (updatedBook == null)
                 throw new ArgumentException("Book parameter can't be null");
             
-            await _context.Database.ExecuteSqlRawAsync("update [dbo].[Books]" +
-                                                       $"set Title='{updatedBook.Title}', Author='{updatedBook.Author}', Genre='{updatedBook.Genre}', Description='{updatedBook.Description}'" +
+            await _context.Database.ExecuteSqlRawAsync("update [dbo].[Books] " +
+                                                       $"set Title=N'{updatedBook.Title}', Author=N'{updatedBook.Author}', Genre=N'{updatedBook.Genre}', Description=N'{updatedBook.Description}' " +
                                                        $"where Id={updatedBook.Id}");
-            /*var oldBook =await GetBookById(updatedBook.Id.ToString(), true);
-            if(oldBook.Data!=null && oldBook.Data.Any())
-            {
-                updatedBook.Data = new byte[oldBook.Data.Length];
-                oldBook.Data.CopyTo(updatedBook.Data, 0);
-            }
-            _context.Update(updatedBook);*/
             await _context.SaveChangesAsync();
         }
         public async Task<EBook> GetBookById(string id,bool includeHeavyData=true)
@@ -136,11 +99,6 @@ namespace DAL.EF
                         Data = b.Data,
                         Description = b.Description
                     }).FirstOrDefaultAsync();
-                /*if (res != null)
-                    res.Data = await (from bd
-                            in _context.Books
-                        where bd.Id == res.Id
-                        select bd.Data).FirstOrDefaultAsync();*/
             }
             if (res.Id == -1)
                 throw new ArgumentException("Book with such id doesn't exist");
@@ -159,9 +117,11 @@ namespace DAL.EF
                     Genre = b.Genre,
                     LikesCount = b.LikesCount,
                     CardBg = b.CardBg
-                }).ToListAsync();
-            return res;
+                })
+                .ToListAsync();
+            return res.OrderBy(b=> b.Title,StringComparison.OrdinalIgnoreCase.WithNaturalSort()).ToList();
         }
+        
         public async Task<IList<EBook>> GetFilteredBooksGallery(Tuple<string,byte> searchParameters)
         {
             var booksBasicList  = await _context.Books
@@ -185,16 +145,12 @@ namespace DAL.EF
             if(searchParameters.Item2==3)
                 result = booksBasicList.Where(b =>!string.IsNullOrWhiteSpace(b.Genre)&& b.Genre.Contains(searchParameters.Item1,StringComparison.OrdinalIgnoreCase))
                     .ToList();
-
             if (searchParameters.Item2 == 4)
             {
-               // var list2 = await _context.Books.Select(b => new Tuple<int, string>(b.Id, b.Description)).ToListAsync();
-               result = booksBasicList.Where(b =>!string.IsNullOrWhiteSpace(b.Description)&& b.Description.Contains(searchParameters.Item1,StringComparison.OrdinalIgnoreCase))
+                result = booksBasicList.Where(b =>!string.IsNullOrWhiteSpace(b.Description)&& b.Description.Contains(searchParameters.Item1,StringComparison.OrdinalIgnoreCase))
                    .ToList();
             }
-
-            return result;
-                //throw new ArgumentException("Invalid search parameters!");
+            return result.OrderBy(b=>b.Title,StringComparison.OrdinalIgnoreCase.WithNaturalSort()).ToList();
         }
         public async Task UpdateBookInFavorites(int bookId, string userName,bool removingMode=false)
         {
@@ -212,9 +168,6 @@ namespace DAL.EF
                 await _context.Database.ExecuteSqlRawAsync("update [dbo].[Books]" +
                                                            "set LikesCount=LikesCount+1" +
                                                            $"where Id={bookId}");
-                //_context.Books.FromSqlRaw();
-
-                // _context.Books.Update(book).Entity.LikesCount+=1;
             }
             else
             {
@@ -223,13 +176,10 @@ namespace DAL.EF
                             in _context.FavoriteBooksToUsers
                         where (fbtu.BookId == bookId && fbtu.UserId == user.Id)
                         select fbtu).FirstOrDefaultAsync());
-               // book.LikesCount--;
-              // _context.Books.Update(book).Entity.LikesCount-=1;
-              await _context.Database.ExecuteSqlRawAsync("update [dbo].[Books]" +
-                                                         "set LikesCount=LikesCount-1" +
-                                                         $"where Id={bookId}");
+                await _context.Database.ExecuteSqlRawAsync("update [dbo].[Books]" +
+                                                           "set LikesCount=LikesCount-1" +
+                                                           $"where Id={bookId}");
             }
-            
             await _context.SaveChangesAsync();
         }
     }

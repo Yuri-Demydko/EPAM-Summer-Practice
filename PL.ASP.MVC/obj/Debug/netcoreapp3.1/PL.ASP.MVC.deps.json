@@ -1038,6 +1038,20 @@
           }
         }
       },
+      "NaturalSort.Extension/3.1.0": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/NaturalSort.Extension.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.3/NaturalSort.Extension.dll": {}
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "6.0.0-preview.5.21301.5",
@@ -2280,6 +2294,7 @@
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
+          "NaturalSort.Extension": "3.1.0",
           "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
@@ -4357,6 +4372,13 @@
       "sha512": "sha512-7jWTwc8pS5o/9vpB8JLU3XcMZ3uefpP84XG18j3ZUFtPKns6p7Jc0miZTBYsp4RUp2n9mzxeGwrVWFsJaYF5Aw==",
       "path": "microsoft.win32.systemevents/6.0.0-preview.5.21301.5",
       "hashPath": "microsoft.win32.systemevents.6.0.0-preview.5.21301.5.nupkg.sha512"
+    },
+    "NaturalSort.Extension/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0oh26scGEfa64m/3P7ESlNxpdQoIg4OYIlLTQn12ASslJkXTPyoguZOSZCh6B8moVQXfvYWM1tnJ4JCb094hEQ==",
+      "path": "naturalsort.extension/3.1.0",
+      "hashPath": "naturalsort.extension.3.1.0.nupkg.sha512"
     },
     "NETStandard.Library/1.6.1": {
       "type": "package",

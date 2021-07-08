@@ -22,5 +22,7 @@ namespace BLL.Logic
         public async Task DeleteBook(string bookId) => await _booksDao.DeleteBook(bookId);
         public async Task<IList<EBook>> GetFilteredBooksGallery(Tuple<string,byte> searchParameters) =>
             await _booksDao.GetFilteredBooksGallery(searchParameters);
+
+        public async Task<bool> CheckBookData(string id) => await _booksDao.CheckBookData(id);
     }
 }

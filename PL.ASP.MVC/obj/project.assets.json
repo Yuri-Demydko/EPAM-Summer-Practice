@@ -875,6 +875,18 @@
           }
         }
       },
+      "NaturalSort.Extension/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/NaturalSort.Extension.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/NaturalSort.Extension.dll": {}
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -2823,6 +2835,7 @@
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
+          "NaturalSort.Extension": "3.1.0",
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
@@ -4098,6 +4111,27 @@
         "runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.xml",
         "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll",
         "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml"
+      ]
+    },
+    "NaturalSort.Extension/3.1.0": {
+      "sha512": "0oh26scGEfa64m/3P7ESlNxpdQoIg4OYIlLTQn12ASslJkXTPyoguZOSZCh6B8moVQXfvYWM1tnJ4JCb094hEQ==",
+      "type": "package",
+      "path": "naturalsort.extension/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/NaturalSort.Extension.dll",
+        "lib/net40/NaturalSort.Extension.pdb",
+        "lib/net40/NaturalSort.Extension.xml",
+        "lib/net5.0/NaturalSort.Extension.dll",
+        "lib/net5.0/NaturalSort.Extension.pdb",
+        "lib/net5.0/NaturalSort.Extension.xml",
+        "lib/netstandard1.3/NaturalSort.Extension.dll",
+        "lib/netstandard1.3/NaturalSort.Extension.pdb",
+        "lib/netstandard1.3/NaturalSort.Extension.xml",
+        "logo_64.png",
+        "naturalsort.extension.3.1.0.nupkg.sha512",
+        "naturalsort.extension.nuspec"
       ]
     },
     "NETStandard.Library/1.6.1": {
@@ -8967,37 +9001,35 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\yurid\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\PL.ASP.MVC\\PL.ASP.MVC.csproj",
+      "projectUniqueName": "D:\\Rider\\EPAM.Practice.Library.Last\\PL.ASP.MVC\\PL.ASP.MVC.csproj",
       "projectName": "PL.ASP.MVC",
-      "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\PL.ASP.MVC\\PL.ASP.MVC.csproj",
-      "packagesPath": "C:\\Users\\yurid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\PL.ASP.MVC\\obj\\",
+      "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\PL.ASP.MVC\\PL.ASP.MVC.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "D:\\Rider\\EPAM.Practice.Library.Last\\PL.ASP.MVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\yurid\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\BLL.Logic\\BLL.Logic.csproj": {
-              "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\BLL.Logic\\BLL.Logic.csproj"
+            "D:\\Rider\\EPAM.Practice.Library.Last\\BLL.Logic\\BLL.Logic.csproj": {
+              "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\BLL.Logic\\BLL.Logic.csproj"
             },
-            "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DependencyResolving\\DependencyResolving.csproj": {
-              "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DependencyResolving\\DependencyResolving.csproj"
+            "D:\\Rider\\EPAM.Practice.Library.Last\\DependencyResolving\\DependencyResolving.csproj": {
+              "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DependencyResolving\\DependencyResolving.csproj"
             }
           }
         }
@@ -9071,7 +9103,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
