@@ -52,3 +52,9 @@ D:/Rider/EPAM.Practice.Library.Last/BLL.Logic/obj/Debug/netcoreapp3.1/BLL.Logic.
 /Users/yuri/RiderProjects/EPAM-Practice-Library/BLL.Logic/obj/Debug/netcoreapp3.1/BLL.Logic.csproj.CopyComplete
 /Users/yuri/RiderProjects/EPAM-Practice-Library/BLL.Logic/obj/Debug/netcoreapp3.1/BLL.Logic.dll
 /Users/yuri/RiderProjects/EPAM-Practice-Library/BLL.Logic/obj/Debug/netcoreapp3.1/BLL.Logic.pdb
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Logic\obj\Debug\netcoreapp3.1\BLL.Logic.csproj.AssemblyReference.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Logic\obj\Debug\netcoreapp3.1\BLL.Logic.AssemblyInfoInputs.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Logic\obj\Debug\netcoreapp3.1\BLL.Logic.AssemblyInfo.cs
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Logic\obj\Debug\netcoreapp3.1\BLL.Logic.csproj.CoreCompileInputs.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Logic\obj\Debug\netcoreapp3.1\BLL.Logic.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\BLL.Logic\obj\Debug\netcoreapp3.1\BLL.Logic.pdb

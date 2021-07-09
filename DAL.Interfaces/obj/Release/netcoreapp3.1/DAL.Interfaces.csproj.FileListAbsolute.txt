@@ -1,0 +1,12 @@
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\bin\Release\netcoreapp3.1\DAL.Interfaces.deps.json
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\bin\Release\netcoreapp3.1\DAL.Interfaces.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\bin\Release\netcoreapp3.1\DAL.Interfaces.pdb
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\bin\Release\netcoreapp3.1\DataTransferObjects.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\bin\Release\netcoreapp3.1\DataTransferObjects.pdb
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Release\netcoreapp3.1\DAL.Interfaces.csproj.AssemblyReference.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Release\netcoreapp3.1\DAL.Interfaces.AssemblyInfoInputs.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Release\netcoreapp3.1\DAL.Interfaces.AssemblyInfo.cs
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Release\netcoreapp3.1\DAL.Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Release\netcoreapp3.1\DAL.Interfaces.csproj.CopyComplete
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Release\netcoreapp3.1\DAL.Interfaces.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DAL.Interfaces\obj\Release\netcoreapp3.1\DAL.Interfaces.pdb

@@ -1,39 +1,38 @@
 {
   "format": 1,
   "restore": {
-    "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.EF/DAL.EF.csproj": {}
+    "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.EF\\DAL.EF.csproj": {}
   },
   "projects": {
-    "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.EF/DAL.EF.csproj": {
+    "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.EF\\DAL.EF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.EF/DAL.EF.csproj",
+        "projectUniqueName": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.EF\\DAL.EF.csproj",
         "projectName": "DAL.EF",
-        "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.EF/DAL.EF.csproj",
-        "packagesPath": "/Users/yuri/.nuget/packages/",
-        "outputPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.EF/obj/",
+        "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.EF\\DAL.EF.csproj",
+        "packagesPath": "C:\\Users\\yurid\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.EF\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/Users/yuri/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\yurid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.Interfaces/DAL.Interfaces.csproj": {
-                "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.Interfaces/DAL.Interfaces.csproj"
+              "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.Interfaces\\DAL.Interfaces.csproj": {
+                "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.Interfaces\\DAL.Interfaces.csproj"
               },
-              "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/DataTransferObjects.csproj": {
-                "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/DataTransferObjects.csproj"
+              "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DataTransferObjects\\DataTransferObjects.csproj": {
+                "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DataTransferObjects\\DataTransferObjects.csproj"
               }
             }
           }
@@ -100,37 +99,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.Interfaces/DAL.Interfaces.csproj": {
+    "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.Interfaces\\DAL.Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.Interfaces/DAL.Interfaces.csproj",
+        "projectUniqueName": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.Interfaces\\DAL.Interfaces.csproj",
         "projectName": "DAL.Interfaces",
-        "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.Interfaces/DAL.Interfaces.csproj",
-        "packagesPath": "/Users/yuri/.nuget/packages/",
-        "outputPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.Interfaces/obj/",
+        "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.Interfaces\\DAL.Interfaces.csproj",
+        "packagesPath": "C:\\Users\\yurid\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DAL.Interfaces\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/Users/yuri/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\yurid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/DataTransferObjects.csproj": {
-                "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/DataTransferObjects.csproj"
+              "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DataTransferObjects\\DataTransferObjects.csproj": {
+                "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DataTransferObjects\\DataTransferObjects.csproj"
               }
             }
           }
@@ -169,29 +167,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/DataTransferObjects.csproj": {
+    "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DataTransferObjects\\DataTransferObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/DataTransferObjects.csproj",
+        "projectUniqueName": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DataTransferObjects\\DataTransferObjects.csproj",
         "projectName": "DataTransferObjects",
-        "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/DataTransferObjects.csproj",
-        "packagesPath": "/Users/yuri/.nuget/packages/",
-        "outputPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/obj/",
+        "projectPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DataTransferObjects\\DataTransferObjects.csproj",
+        "packagesPath": "C:\\Users\\yurid\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yurid\\RiderProjects\\EPAM_Practice.Library\\DataTransferObjects\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/Users/yuri/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\yurid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -234,7 +231,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

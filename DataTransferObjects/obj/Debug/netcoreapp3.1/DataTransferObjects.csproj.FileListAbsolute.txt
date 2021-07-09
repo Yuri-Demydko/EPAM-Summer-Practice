@@ -1,12 +1,3 @@
-C:/Users/yurid/RiderProjects/EPAM_Practice.Library/DataTransferObjects/bin/Debug/netcoreapp3.1/DataTransferObjects.deps.json
-C:/Users/yurid/RiderProjects/EPAM_Practice.Library/DataTransferObjects/bin/Debug/netcoreapp3.1/DataTransferObjects.dll
-C:/Users/yurid/RiderProjects/EPAM_Practice.Library/DataTransferObjects/bin/Debug/netcoreapp3.1/DataTransferObjects.pdb
-C:/Users/yurid/RiderProjects/EPAM_Practice.Library/DataTransferObjects/obj/Debug/netcoreapp3.1/DataTransferObjects.csproj.AssemblyReference.cache
-C:/Users/yurid/RiderProjects/EPAM_Practice.Library/DataTransferObjects/obj/Debug/netcoreapp3.1/DataTransferObjects.AssemblyInfoInputs.cache
-C:/Users/yurid/RiderProjects/EPAM_Practice.Library/DataTransferObjects/obj/Debug/netcoreapp3.1/DataTransferObjects.AssemblyInfo.cs
-C:/Users/yurid/RiderProjects/EPAM_Practice.Library/DataTransferObjects/obj/Debug/netcoreapp3.1/DataTransferObjects.csproj.CoreCompileInputs.cache
-C:/Users/yurid/RiderProjects/EPAM_Practice.Library/DataTransferObjects/obj/Debug/netcoreapp3.1/DataTransferObjects.dll
-C:/Users/yurid/RiderProjects/EPAM_Practice.Library/DataTransferObjects/obj/Debug/netcoreapp3.1/DataTransferObjects.pdb
 D:/Rider/EPAM.Practice.Library.Last/DataTransferObjects/bin/Debug/netcoreapp3.1/DataTransferObjects.deps.json
 D:/Rider/EPAM.Practice.Library.Last/DataTransferObjects/bin/Debug/netcoreapp3.1/DataTransferObjects.dll
 D:/Rider/EPAM.Practice.Library.Last/DataTransferObjects/bin/Debug/netcoreapp3.1/DataTransferObjects.pdb
@@ -25,3 +16,12 @@ D:/Rider/EPAM.Practice.Library.Last/DataTransferObjects/obj/Debug/netcoreapp3.1/
 /Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/obj/Debug/netcoreapp3.1/DataTransferObjects.csproj.CoreCompileInputs.cache
 /Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/obj/Debug/netcoreapp3.1/DataTransferObjects.dll
 /Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/obj/Debug/netcoreapp3.1/DataTransferObjects.pdb
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DataTransferObjects\bin\Debug\netcoreapp3.1\DataTransferObjects.deps.json
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DataTransferObjects\bin\Debug\netcoreapp3.1\DataTransferObjects.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DataTransferObjects\bin\Debug\netcoreapp3.1\DataTransferObjects.pdb
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DataTransferObjects\obj\Debug\netcoreapp3.1\DataTransferObjects.csproj.AssemblyReference.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DataTransferObjects\obj\Debug\netcoreapp3.1\DataTransferObjects.AssemblyInfoInputs.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DataTransferObjects\obj\Debug\netcoreapp3.1\DataTransferObjects.AssemblyInfo.cs
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DataTransferObjects\obj\Debug\netcoreapp3.1\DataTransferObjects.csproj.CoreCompileInputs.cache
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DataTransferObjects\obj\Debug\netcoreapp3.1\DataTransferObjects.dll
+C:\Users\yurid\RiderProjects\EPAM_Practice.Library\DataTransferObjects\obj\Debug\netcoreapp3.1\DataTransferObjects.pdb
