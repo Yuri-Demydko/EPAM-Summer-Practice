@@ -13,7 +13,7 @@ namespace DAL.Interfaces
          public Task SignOutAsync();
          public Task<EUser> GetUserByUserNameAsync(string username,bool includeHeavyData=true);
          public  Task<IList<EBook>> GetFavoriteBooksByUserAsync(EUser user);
-         public Task<bool> UpdateUserDataAsync(EUser user);
+         public Task<bool> UpdateUserDataAsync(EUser user,string oldPassword);
          public Task<IdentityResult> UpdatePasswordAsync(EUser user,string oldPassword, string newPassword);
          public Task<bool> CheckBookInFavoritesOfUser(EBook book, string userName);
     }

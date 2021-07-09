@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Rider\\EPAM.Practice.Library.Last\\PL.ASP.MVC\\PL.ASP.MVC.csproj": {}
+    "/Users/yuri/RiderProjects/EPAM-Practice-Library/PL.ASP.MVC/PL.ASP.MVC.csproj": {}
   },
   "projects": {
-    "D:\\Rider\\EPAM.Practice.Library.Last\\BLL.Interfaces\\BLL.Interfaces.csproj": {
+    "/Users/yuri/RiderProjects/EPAM-Practice-Library/BLL.Interfaces/BLL.Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Rider\\EPAM.Practice.Library.Last\\BLL.Interfaces\\BLL.Interfaces.csproj",
+        "projectUniqueName": "/Users/yuri/RiderProjects/EPAM-Practice-Library/BLL.Interfaces/BLL.Interfaces.csproj",
         "projectName": "BLL.Interfaces",
-        "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\BLL.Interfaces\\BLL.Interfaces.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Rider\\EPAM.Practice.Library.Last\\BLL.Interfaces\\obj\\",
+        "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/BLL.Interfaces/BLL.Interfaces.csproj",
+        "packagesPath": "/Users/yuri/.nuget/packages/",
+        "outputPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/BLL.Interfaces/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/yuri/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -26,8 +29,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj": {
-                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj"
+              "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/DataTransferObjects.csproj": {
+                "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/DataTransferObjects.csproj"
               }
             }
           }
@@ -66,21 +69,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Rider\\EPAM.Practice.Library.Last\\BLL.Logic\\BLL.Logic.csproj": {
+    "/Users/yuri/RiderProjects/EPAM-Practice-Library/BLL.Logic/BLL.Logic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Rider\\EPAM.Practice.Library.Last\\BLL.Logic\\BLL.Logic.csproj",
+        "projectUniqueName": "/Users/yuri/RiderProjects/EPAM-Practice-Library/BLL.Logic/BLL.Logic.csproj",
         "projectName": "BLL.Logic",
-        "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\BLL.Logic\\BLL.Logic.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Rider\\EPAM.Practice.Library.Last\\BLL.Logic\\obj\\",
+        "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/BLL.Logic/BLL.Logic.csproj",
+        "packagesPath": "/Users/yuri/.nuget/packages/",
+        "outputPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/BLL.Logic/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/yuri/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -92,11 +98,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Rider\\EPAM.Practice.Library.Last\\BLL.Interfaces\\BLL.Interfaces.csproj": {
-                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\BLL.Interfaces\\BLL.Interfaces.csproj"
+              "/Users/yuri/RiderProjects/EPAM-Practice-Library/BLL.Interfaces/BLL.Interfaces.csproj": {
+                "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/BLL.Interfaces/BLL.Interfaces.csproj"
               },
-              "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.EF\\DAL.EF.csproj": {
-                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.EF\\DAL.EF.csproj"
+              "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.EF/DAL.EF.csproj": {
+                "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.EF/DAL.EF.csproj"
               }
             }
           }
@@ -135,21 +141,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.EF\\DAL.EF.csproj": {
+    "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.EF/DAL.EF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.EF\\DAL.EF.csproj",
+        "projectUniqueName": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.EF/DAL.EF.csproj",
         "projectName": "DAL.EF",
-        "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.EF\\DAL.EF.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.EF\\obj\\",
+        "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.EF/DAL.EF.csproj",
+        "packagesPath": "/Users/yuri/.nuget/packages/",
+        "outputPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.EF/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/yuri/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -161,11 +170,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.Interfaces\\DAL.Interfaces.csproj": {
-                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.Interfaces\\DAL.Interfaces.csproj"
+              "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.Interfaces/DAL.Interfaces.csproj": {
+                "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.Interfaces/DAL.Interfaces.csproj"
               },
-              "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj": {
-                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj"
+              "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/DataTransferObjects.csproj": {
+                "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/DataTransferObjects.csproj"
               }
             }
           }
@@ -232,21 +241,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.Interfaces\\DAL.Interfaces.csproj": {
+    "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.Interfaces/DAL.Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.Interfaces\\DAL.Interfaces.csproj",
+        "projectUniqueName": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.Interfaces/DAL.Interfaces.csproj",
         "projectName": "DAL.Interfaces",
-        "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.Interfaces\\DAL.Interfaces.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.Interfaces\\obj\\",
+        "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.Interfaces/DAL.Interfaces.csproj",
+        "packagesPath": "/Users/yuri/.nuget/packages/",
+        "outputPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.Interfaces/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/yuri/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -258,8 +270,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj": {
-                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj"
+              "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/DataTransferObjects.csproj": {
+                "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/DataTransferObjects.csproj"
               }
             }
           }
@@ -298,21 +310,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj": {
+    "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/DataTransferObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj",
+        "projectUniqueName": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/DataTransferObjects.csproj",
         "projectName": "DataTransferObjects",
-        "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\obj\\",
+        "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/DataTransferObjects.csproj",
+        "packagesPath": "/Users/yuri/.nuget/packages/",
+        "outputPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/yuri/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -360,21 +375,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Rider\\EPAM.Practice.Library.Last\\DependencyResolving\\DependencyResolving.csproj": {
+    "/Users/yuri/RiderProjects/EPAM-Practice-Library/DependencyResolving/DependencyResolving.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Rider\\EPAM.Practice.Library.Last\\DependencyResolving\\DependencyResolving.csproj",
+        "projectUniqueName": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DependencyResolving/DependencyResolving.csproj",
         "projectName": "DependencyResolving",
-        "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DependencyResolving\\DependencyResolving.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DependencyResolving\\obj\\",
+        "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DependencyResolving/DependencyResolving.csproj",
+        "packagesPath": "/Users/yuri/.nuget/packages/",
+        "outputPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DependencyResolving/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/yuri/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -386,20 +404,20 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Rider\\EPAM.Practice.Library.Last\\BLL.Interfaces\\BLL.Interfaces.csproj": {
-                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\BLL.Interfaces\\BLL.Interfaces.csproj"
+              "/Users/yuri/RiderProjects/EPAM-Practice-Library/BLL.Interfaces/BLL.Interfaces.csproj": {
+                "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/BLL.Interfaces/BLL.Interfaces.csproj"
               },
-              "D:\\Rider\\EPAM.Practice.Library.Last\\BLL.Logic\\BLL.Logic.csproj": {
-                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\BLL.Logic\\BLL.Logic.csproj"
+              "/Users/yuri/RiderProjects/EPAM-Practice-Library/BLL.Logic/BLL.Logic.csproj": {
+                "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/BLL.Logic/BLL.Logic.csproj"
               },
-              "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.EF\\DAL.EF.csproj": {
-                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.EF\\DAL.EF.csproj"
+              "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.EF/DAL.EF.csproj": {
+                "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.EF/DAL.EF.csproj"
               },
-              "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.Interfaces\\DAL.Interfaces.csproj": {
-                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DAL.Interfaces\\DAL.Interfaces.csproj"
+              "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.Interfaces/DAL.Interfaces.csproj": {
+                "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DAL.Interfaces/DAL.Interfaces.csproj"
               },
-              "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj": {
-                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DataTransferObjects\\DataTransferObjects.csproj"
+              "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/DataTransferObjects.csproj": {
+                "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DataTransferObjects/DataTransferObjects.csproj"
               }
             }
           }
@@ -442,21 +460,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Rider\\EPAM.Practice.Library.Last\\PL.ASP.MVC\\PL.ASP.MVC.csproj": {
+    "/Users/yuri/RiderProjects/EPAM-Practice-Library/PL.ASP.MVC/PL.ASP.MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Rider\\EPAM.Practice.Library.Last\\PL.ASP.MVC\\PL.ASP.MVC.csproj",
+        "projectUniqueName": "/Users/yuri/RiderProjects/EPAM-Practice-Library/PL.ASP.MVC/PL.ASP.MVC.csproj",
         "projectName": "PL.ASP.MVC",
-        "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\PL.ASP.MVC\\PL.ASP.MVC.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Rider\\EPAM.Practice.Library.Last\\PL.ASP.MVC\\obj\\",
+        "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/PL.ASP.MVC/PL.ASP.MVC.csproj",
+        "packagesPath": "/Users/yuri/.nuget/packages/",
+        "outputPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/PL.ASP.MVC/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/yuri/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -468,11 +489,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Rider\\EPAM.Practice.Library.Last\\BLL.Logic\\BLL.Logic.csproj": {
-                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\BLL.Logic\\BLL.Logic.csproj"
+              "/Users/yuri/RiderProjects/EPAM-Practice-Library/BLL.Logic/BLL.Logic.csproj": {
+                "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/BLL.Logic/BLL.Logic.csproj"
               },
-              "D:\\Rider\\EPAM.Practice.Library.Last\\DependencyResolving\\DependencyResolving.csproj": {
-                "projectPath": "D:\\Rider\\EPAM.Practice.Library.Last\\DependencyResolving\\DependencyResolving.csproj"
+              "/Users/yuri/RiderProjects/EPAM-Practice-Library/DependencyResolving/DependencyResolving.csproj": {
+                "projectPath": "/Users/yuri/RiderProjects/EPAM-Practice-Library/DependencyResolving/DependencyResolving.csproj"
               }
             }
           }
@@ -546,7 +567,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }

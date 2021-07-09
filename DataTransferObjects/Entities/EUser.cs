@@ -10,8 +10,7 @@ namespace Entities.Entities
         public string City { get; set; }
         public string DateOfBirth { get; set; }
         public byte[] Avatar { get; set; }
-        public string AdditionalInfo { get; set; } 
-        //public List<EBook> FavoriteBooks { get; set; }
+        public string AdditionalInfo { get; set; }
         public List<EBook> OwnBooks { get; set; }
     }
 }

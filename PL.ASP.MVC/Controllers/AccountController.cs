@@ -32,7 +32,7 @@ namespace PL.ASP.MVC.Controllers
                 
             if (ModelState.IsValid)
             {
-                var user=  await _usersBlo.GetUserByUserNameAsync(User.Identity.Name,true);
+                var user=  await _usersBlo.GetUserByUserNameAsync(User.Identity.Name,false);
                 model.User = user;
                 if (IsNullOrWhiteSpace(model.FName))
                     model.FName = "Unknown";
@@ -73,7 +73,7 @@ namespace PL.ASP.MVC.Controllers
                     model.IsErrorModel = true;
                 }
                 
-                if(await _usersBlo.UpdateUserDataAsync(model.User))
+                if(await _usersBlo.UpdateUserDataAsync(model.User,model.OldPassword))
                     return RedirectToAction("Index", "Account");
             }
             return RedirectToAction("Index", "Account", new {editMode=true,errModel=model});

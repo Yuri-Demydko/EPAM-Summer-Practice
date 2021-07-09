@@ -8,7 +8,6 @@
          <p class="lead">To get access to all features of Y-Library</p>
      </div>
      <hr class="my-4" style="width: 96%">
-     
      <form style="margin:0 auto; width:fit-content" class="form-inline" method="post" asp-controller="Account" asp-action="Login"
            asp-route-returnUrl="@Model.ReturnUrl">
          <div asp-validation-summary="ModelOnly"></div>
@@ -26,10 +25,9 @@
                          Remember me
                      </label>
          </div>
-         
      </form>
      <div style="width: fit-content; margin: 0 auto">
-             <a class="btn btn-link" style="font-weight:300;" asp-controller="Account" asp-action="Register">Have no account? So, sign up</a>
+         <a class="btn btn-link" style="font-weight:300;" asp-controller="Account" asp-action="Register">Have no account? So, sign up</a>
      </div>
      </div>
 

@@ -21,7 +21,7 @@ namespace BLL.Logic
             await _dao.PasswordSignInAsync(login, password, remember, lockOnFailure);
         public async Task SignOutAsync() => await _dao.SignOutAsync();
         public Task<EUser> GetUserByUserNameAsync(string username,bool includeHeavyData=true) => _dao.GetUserByUserNameAsync(username,includeHeavyData);
-        public async Task<bool> UpdateUserDataAsync(EUser user) => await _dao.UpdateUserDataAsync(user);
+        public async Task<bool> UpdateUserDataAsync(EUser user,string oldPassword) => await _dao.UpdateUserDataAsync(user,oldPassword);
         public async Task<IList<EBook>> GetFavoriteBooksByUserAsync(EUser user) => await _dao.GetFavoriteBooksByUserAsync(user);
         public async Task<IdentityResult> UpdatePasswordAsync(EUser user, string oldPassword, string newPassword) =>
             await _dao.UpdatePasswordAsync(user, oldPassword, newPassword);

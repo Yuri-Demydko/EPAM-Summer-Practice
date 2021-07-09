@@ -10,7 +10,6 @@
         public byte[] Data { get; set; }
         public int LikesCount { get; set; }
         public EUser Owner { get; set; }
-        
         public string CardBg { get; set; }
     }
 }

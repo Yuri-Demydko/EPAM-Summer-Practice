@@ -6,6 +6,7 @@ using Entities.Entities;
 using DAL.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using NaturalSort.Extension;
 
 namespace DAL.EF
 {
@@ -70,6 +71,7 @@ namespace DAL.EF
                                  CardBg = b.CardBg,
                                  
                              }).AsNoTracking().ToListAsync();
+                       user.OwnBooks=  user.OwnBooks.OrderBy(b => b.Title, StringComparison.OrdinalIgnoreCase.WithNaturalSort()).ToList();
                     }
                     else
                     {
@@ -97,25 +99,24 @@ namespace DAL.EF
                         where (fbtu.BookId == book.Id && fbtu.UserId == uId)
                         select fbtu).AnyAsync();
                 }
-        public async Task<bool> UpdateUserDataAsync(EUser user)
+        public async Task<bool> UpdateUserDataAsync(EUser user,string oldPassword)
                 {
                     if (user == null)
                         throw new ArgumentNullException("User can't be null");
-                    /*await _context.Database.ExecuteSqlRawAsync("update [dbo].[AspNetUsers] " +
-                                                               $"set FirstName=N'{user.FirstName}', LastName=N'{user.LastName}', City=N'{user.City}', DateOfBirth='{user.DateOfBirth}', AdditionalInfo=N'{user.AdditionalInfo}', Avatar='{ava}'" +
-                                                               $" where Id='{user.Id}'");*/
-                    
-                    // $"Avatar='{user.Avatar}',  "+
-                    //_context.ChangeTracker.Clear();
+
                     var userU = _context.Users.First(u => u.Id == user.Id);
+                    
+                    if (!await _userManager.CheckPasswordAsync(userU, oldPassword))
+                        return false;
+                    
                     userU.FirstName = user.FirstName;
                     userU.LastName = user.LastName;
+                    if(user.Avatar!=null&&user.Avatar.Length>0)
                     userU.Avatar = user.Avatar;
                     userU.City = user.City;
                     userU.AdditionalInfo = user.AdditionalInfo;
                     userU.DateOfBirth = user.DateOfBirth;
-                    //userU.OwnBooks = user.OwnBooks;
-                    
+
                     await _userManager.UpdateAsync(userU);
                     await _context.SaveChangesAsync();
                     return true;
